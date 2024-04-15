@@ -1,7 +1,6 @@
 #include <stdio.h> 
 #include <math.h> 
 #include <time.h> 
-#include "./include/k2c_include.h" 
 #include "vlsiModel.h" 
 
 float maxabs(k2c_tensor *tensor1, k2c_tensor *tensor2);
