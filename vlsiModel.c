@@ -9,7 +9,20 @@
 void vlsiModel(k2c_tensor* dense_input_input, k2c_tensor* dense_3_output) { 
 
 float dense_output_array[100] = {0}; 
-k2c_tensor dense_output = {&dense_output_array[0],1,100,{100,  1,  1,  1,  1}}; 
+//k2c_tensor dense_output = {&dense_output_array[0],1,100,{100,  1,  1,  1,  1}}; 
+k2c_tensor dense_output;
+dense_output.ndim = 1;
+dense_output.numel = 100;
+dense_output.shape[0] = 100;
+dense_output.shape[1] = 1;
+dense_output.shape[2] = 1;
+dense_output.shape[3] = 1;
+dense_output.shape[4] = 1;
+
+for (size_t z11 = 0; z11 < 100; z11++) {
+    dense_output.array[z11] = dense_output_array[z11];
+}
+
 float dense_kernel_array[78400] = {
 -5.87119758e-02f,+1.69090852e-02f,-7.39825070e-02f,-6.21601418e-02f,-5.61172254e-02f,
 -2.22886652e-02f,-2.73252279e-03f,-1.88846737e-02f,-6.00070804e-02f,+6.31792992e-02f,
@@ -15692,7 +15705,20 @@ float dense_kernel_array[78400] = {
 +5.44589013e-02f,-3.43278833e-02f,+4.24722210e-02f,-1.27215087e-02f,+2.58290097e-02f,
 -4.35080267e-02f,-3.78015451e-02f,+5.72758317e-02f,+2.28996947e-02f,-6.03427067e-02f,
 }; 
-k2c_tensor dense_kernel = {&dense_kernel_array[0],2,78400,{784,100,  1,  1,  1}}; 
+//k2c_tensor dense_kernel = {&dense_kernel_array[0],2,78400,{784,100,  1,  1,  1}}; 
+k2c_tensor dense_kernel;
+dense_kernel.ndim = 2;
+dense_kernel.numel = 78400;
+dense_kernel.shape[0] = 784;
+dense_kernel.shape[1] = 100;
+dense_kernel.shape[2] = 1;
+dense_kernel.shape[3] = 1;
+dense_kernel.shape[4] = 1;
+
+for (size_t z10 = 0; z10 < 78400; z10++) {
+    dense_kernel.array[z10] = dense_kernel_array[z10];
+}
+
 float dense_bias_array[100] = {
 +1.09376632e-01f,-1.23337870e-02f,+8.07478428e-02f,+8.58669654e-02f,-5.99603392e-02f,
 +5.18332012e-02f,-5.37999943e-02f,-1.08033136e-01f,-1.66805275e-02f,+1.21957794e-01f,
@@ -15715,12 +15741,38 @@ float dense_bias_array[100] = {
 -1.63610689e-02f,+1.44883811e-01f,+5.52899502e-02f,+6.04596213e-02f,-5.37000336e-02f,
 +1.02215596e-01f,-4.99638431e-02f,+1.58187784e-02f,+2.74023954e-02f,+1.09136574e-01f,
 }; 
-k2c_tensor dense_bias = {&dense_bias_array[0],1,100,{100,  1,  1,  1,  1}}; 
+// k2c_tensor dense_bias = {&dense_bias_array[0],1,100,{100,  1,  1,  1,  1}}; 
+k2c_tensor dense_bias;
+dense_bias.ndim = 1;
+dense_bias.numel = 100;
+dense_bias.shape[0] = 100;
+dense_bias.shape[1] = 1;
+dense_bias.shape[2] = 1;
+dense_bias.shape[3] = 1;
+dense_bias.shape[4] = 1;
+
+for (size_t z9 = 0; z9 < 100; z9++) {
+    dense_bias.array[z9] = dense_bias_array[z9];
+}
+
 float dense_fwork[79184] = {0}; 
 
  
 float dense_1_output_array[50] = {0}; 
-k2c_tensor dense_1_output = {&dense_1_output_array[0],1,50,{50, 1, 1, 1, 1}}; 
+//k2c_tensor dense_1_output = {&dense_1_output_array[0],1,50,{50, 1, 1, 1, 1}}; 
+k2c_tensor dense_1_output;
+dense_1_output.ndim = 1;
+dense_1_output.numel = 50;
+dense_1_output.shape[0] = 50;
+dense_1_output.shape[1] = 1;
+dense_1_output.shape[2] = 1;
+dense_1_output.shape[3] = 1;
+dense_1_output.shape[4] = 1;
+
+for (size_t z8 = 0; z8 < 50; z8++) {
+    dense_1_output.array[z8] = dense_1_output_array[z8];
+}
+
 float dense_1_kernel_array[5000] = {
 -5.71738631e-02f,-7.76838139e-02f,+2.09683985e-01f,+2.22538218e-01f,-8.74922648e-02f,
 +2.83328682e-01f,-2.09186122e-01f,+5.59130497e-02f,-1.07406941e-03f,-5.26016355e-02f,
@@ -16723,7 +16775,20 @@ float dense_1_kernel_array[5000] = {
 -8.97682309e-02f,+7.53853917e-02f,-7.98414424e-02f,-7.78734386e-02f,+6.29955530e-02f,
 -3.80807258e-02f,+7.61674121e-02f,-1.58909410e-02f,+1.06827274e-01f,+1.66671157e-01f,
 }; 
-k2c_tensor dense_1_kernel = {&dense_1_kernel_array[0],2,5000,{100, 50,  1,  1,  1}}; 
+//k2c_tensor dense_1_kernel = {&dense_1_kernel_array[0],2,5000,{100, 50,  1,  1,  1}}; 
+k2c_tensor dense_1_kernel;
+dense_1_kernel.ndim = 2;
+dense_1_kernel.numel = 5000;
+dense_1_kernel.shape[0] = 100;
+dense_1_kernel.shape[1] = 50;
+dense_1_kernel.shape[2] = 1;
+dense_1_kernel.shape[3] = 1;
+dense_1_kernel.shape[4] = 1;
+
+for (size_t z7 = 0; z7 < 5000; z7++) {
+    dense_1_kernel.array[z7] = dense_1_kernel_array[z7];
+}
+
 float dense_1_bias_array[50] = {
 +2.71092281e-02f,+6.60758391e-02f,+7.68790022e-03f,+4.94598337e-02f,+1.00107998e-01f,
 +5.36434213e-03f,+6.17436282e-02f,-2.52456497e-02f,+1.67612374e-01f,-1.34570688e-01f,
@@ -16736,12 +16801,37 @@ float dense_1_bias_array[50] = {
 +7.52618462e-02f,+6.21548630e-02f,+5.05514070e-02f,+7.57462382e-02f,+3.59156765e-02f,
 -4.57273200e-02f,+9.28129107e-02f,-4.31290083e-02f,+1.04660176e-01f,+1.19340628e-01f,
 }; 
-k2c_tensor dense_1_bias = {&dense_1_bias_array[0],1,50,{50, 1, 1, 1, 1}}; 
+//k2c_tensor dense_1_bias = {&dense_1_bias_array[0],1,50,{50, 1, 1, 1, 1}}; 
+k2c_tensor dense_1_bias;
+dense_1_bias.ndim = 1;
+dense_1_bias.numel = 50;
+dense_1_bias.shape[0] = 50;
+dense_1_bias.shape[1] = 1;
+dense_1_bias.shape[2] = 1;
+dense_1_bias.shape[3] = 1;
+dense_1_bias.shape[4] = 1;
+
+for (size_t z6 = 0; z6 < 50; z6++) {
+    dense_1_bias.array[z6] = dense_1_bias_array[z6];
+}
+
 float dense_1_fwork[5100] = {0}; 
 
  
 float dense_2_output_array[25] = {0}; 
-k2c_tensor dense_2_output = {&dense_2_output_array[0],1,25,{25, 1, 1, 1, 1}}; 
+//k2c_tensor dense_2_output = {&dense_2_output_array[0],1,25,{25, 1, 1, 1, 1}}; 
+k2c_tensor dense_2_output;
+dense_2_output.ndim = 1;
+dense_2_output.numel = 25;
+dense_2_output.shape[0] = 25;
+dense_2_output.shape[1] = 1;
+dense_2_output.shape[2] = 1;
+dense_2_output.shape[3] = 1;
+dense_2_output.shape[4] = 1;
+
+for (size_t z5 = 0; z5 < 25; z5++) {
+    dense_2_output.array[z5] = dense_2_output_array[z5];
+}
 float dense_2_kernel_array[1250] = {
 +3.33199024e-01f,+2.39707649e-01f,+1.43509313e-01f,+2.74500817e-01f,+1.07816719e-02f,
 -1.38412088e-01f,+9.04383361e-02f,-8.04633871e-02f,+1.85250327e-01f,-1.99025154e-01f,
@@ -16994,7 +17084,20 @@ float dense_2_kernel_array[1250] = {
 -3.69125485e-01f,+2.22305298e-01f,-1.12955965e-01f,+8.86250138e-02f,+1.48497313e-01f,
 +1.52771518e-01f,-1.66078046e-01f,-5.32737300e-02f,+1.65025130e-01f,-1.45076793e-02f,
 }; 
-k2c_tensor dense_2_kernel = {&dense_2_kernel_array[0],2,1250,{50,25, 1, 1, 1}}; 
+//k2c_tensor dense_2_kernel = {&dense_2_kernel_array[0],2,1250,{50,25, 1, 1, 1}}; 
+k2c_tensor dense_2_kernel;
+dense_2_kernel.ndim = 2;
+dense_2_kernel.numel = 1250;
+dense_2_kernel.shape[0] = 50;
+dense_2_kernel.shape[1] = 25;
+dense_2_kernel.shape[2] = 1;
+dense_2_kernel.shape[3] = 1;
+dense_2_kernel.shape[4] = 1;
+
+for (size_t z4 = 0; z4 < 1250; z4++) {
+    dense_2_kernel.array[z4] = dense_2_kernel_array[z4];
+}
+
 float dense_2_bias_array[25] = {
 -6.71359943e-03f,+6.08274667e-03f,-3.01739797e-02f,-2.73172762e-02f,-1.07982615e-02f,
 +1.12128310e-01f,+1.20441973e-01f,+3.91494632e-02f,-3.08117159e-02f,+1.40858248e-01f,
@@ -17002,7 +17105,20 @@ float dense_2_bias_array[25] = {
 +8.44130069e-02f,+1.31049648e-01f,-1.85746420e-02f,-5.98167330e-02f,+5.21828160e-02f,
 +2.31076567e-03f,+1.08543508e-01f,+1.57306433e-01f,+1.01592459e-01f,-1.46292448e-02f,
 }; 
-k2c_tensor dense_2_bias = {&dense_2_bias_array[0],1,25,{25, 1, 1, 1, 1}}; 
+//k2c_tensor dense_2_bias = {&dense_2_bias_array[0],1,25,{25, 1, 1, 1, 1}}; 
+k2c_tensor dense_2_bias;
+dense_2_bias.ndim = 1;
+dense_2_bias.numel = 25;
+dense_2_bias.shape[0] = 25;
+dense_2_bias.shape[1] = 1;
+dense_2_bias.shape[2] = 1;
+dense_2_bias.shape[3] = 1;
+dense_2_bias.shape[4] = 1;
+
+for (size_t z3 = 0; z3 < 25; z3++) {
+    dense_2_bias.array[z3] = dense_2_bias_array[z3];
+}
+
 float dense_2_fwork[1300] = {0}; 
 
  
@@ -17058,12 +17174,37 @@ float dense_3_kernel_array[250] = {
 +2.81012118e-01f,-2.97835171e-01f,+1.72807559e-01f,-1.33635700e-01f,+1.81584507e-01f,
 -3.57266188e-01f,-3.63731533e-01f,+4.82530773e-01f,-1.36887982e-01f,+3.49402159e-01f,
 }; 
-k2c_tensor dense_3_kernel = {&dense_3_kernel_array[0],2,250,{25,10, 1, 1, 1}}; 
+//k2c_tensor dense_3_kernel = {&dense_3_kernel_array[0],2,250,{25,10, 1, 1, 1}}; 
+k2c_tensor dense_3_kernel;
+dense_3_kernel.ndim = 2;
+dense_3_kernel.numel = 250;
+dense_3_kernel.shape[0] = 25;
+dense_3_kernel.shape[1] = 10;
+dense_3_kernel.shape[2] = 1;
+dense_3_kernel.shape[3] = 1;
+dense_3_kernel.shape[4] = 1;
+
+for (size_t z2 = 0; z2 < 250; z2++) {
+    dense_3_kernel.array[z2] = dense_3_kernel_array[z2];
+}
 float dense_3_bias_array[10] = {
 -9.08612832e-02f,-3.56810205e-02f,-1.65511891e-02f,-5.30379154e-02f,-4.12639324e-03f,
 +1.19130522e-01f,-1.07331283e-01f,-1.70261189e-02f,+7.26383254e-02f,+1.94916185e-02f,
 }; 
-k2c_tensor dense_3_bias = {&dense_3_bias_array[0],1,10,{10, 1, 1, 1, 1}}; 
+//k2c_tensor dense_3_bias = {&dense_3_bias_array[0],1,10,{10, 1, 1, 1, 1}}; 
+k2c_tensor dense_3_bias;
+for(size_t z1=0;z1<10;z1++)
+{
+    dense_3_bias.array[z1]=dense_3_bias_array[z1];
+}
+dense_3_bias.ndim=1;
+dense_3_bias.numel=10;
+dense_3_bias.shape[0]=10;
+dense_3_bias.shape[1]=1;
+dense_3_bias.shape[2]=1;
+dense_3_bias.shape[3]=1;
+dense_3_bias.shape[4]=1;
+
 float dense_3_fwork[275] = {0}; 
 
  
