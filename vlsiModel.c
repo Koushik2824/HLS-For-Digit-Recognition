@@ -2,46 +2,6 @@
 #include <string.h>
 #include "vlsiModel.h"
 
-void k2c_dense(k2c_tensor *output, const k2c_tensor *input, const k2c_tensor *kernel, const k2c_tensor *bias, int activation, float *fwork)
-{
-
-    if (input->ndim <= 2)
-    {
-        size_t outrows;
-
-        if (input->ndim > 1)
-        {
-            outrows = input->shape[0];
-        }
-        else
-        {
-            outrows = 1;
-        }
-        const size_t outcols = kernel->shape[1];
-        const size_t innerdim = kernel->shape[0];
-        const size_t outsize = outrows * outcols;
-        k2c_affine_matmul(output->array, input->array, kernel->array, bias->array,
-                          outrows, outcols, innerdim);
-        if (activation == 0)
-            k2c_relu_func(output->array, outsize);
-        else
-            k2c_softmax_func(output->array, outsize);
-    }
-    else
-    {
-        const size_t axesA[1] = {input->ndim - 1};
-        const size_t axesB[1] = {0};
-        const size_t naxes = 1;
-        const int normalize = 0;
-
-        k2c_dot(output, input, kernel, axesA, axesB, naxes, normalize, fwork);
-        k2c_bias_add(output, bias);
-        if (activation == 0)
-            k2c_relu_func(output->array, output->numel);
-        else
-            k2c_softmax_func(output->array, output->numel);
-    }
-}
 void k2c_relu_func(float *x, const size_t size)
 {
 
@@ -105,172 +65,6 @@ void k2c_affine_matmul(float *C, const float *A, const float *B, const float *d,
         }
     }
 }
-void k2c_dot(k2c_tensor *C, const k2c_tensor *A, const k2c_tensor *B, const size_t *axesA, const size_t *axesB, const size_t naxes, const int normalize, float *fwork)
-{
-    size_t permA[K2C_MAX_NDIM];
-    size_t permB[K2C_MAX_NDIM];
-    size_t prod_axesA = 1;
-    size_t prod_axesB = 1;
-    size_t free_axesA, free_axesB;
-    size_t freeA[K2C_MAX_NDIM];
-    size_t freeB[K2C_MAX_NDIM];
-    size_t count;
-    int isin;
-    size_t newshpA[K2C_MAX_NDIM];
-    size_t newshpB[K2C_MAX_NDIM];
-    const size_t ndimA = A->ndim;
-    const size_t ndimB = B->ndim;
-    float *reshapeA = &fwork[0]; // temp working storage
-    float *reshapeB = &fwork[A->numel];
-    size_t Asub[K2C_MAX_NDIM];
-    size_t Bsub[K2C_MAX_NDIM];
-    // find which axes are free (ie, not being summed over)
-    count = 0;
-    size_t i;
-    size_t j;
-    for (i = 0; i < ndimA; ++i)
-    {
-        isin = 0;
-        for (j = 0; j < naxes; ++j)
-        {
-            if (i == axesA[j])
-            {
-                isin = 1;
-            }
-        }
-        if (!isin)
-        {
-            freeA[count] = i;
-            ++count;
-        }
-    }
-    count = 0;
-    for (i = 0; i < ndimB; ++i)
-    {
-        isin = 0;
-        for (j = 0; j < naxes; ++j)
-        {
-            if (i == axesB[j])
-            {
-                isin = 1;
-            }
-        }
-        if (!isin)
-        {
-            freeB[count] = i;
-            ++count;
-        }
-    }
-
-    // number of elements in inner dimension
-    for (i = 0; i < naxes; ++i)
-    {
-        prod_axesA *= A->shape[axesA[i]];
-    }
-    for (i = 0; i < naxes; ++i)
-    {
-        prod_axesB *= B->shape[axesB[i]];
-    }
-    // number of elements in free dimension
-    free_axesA = A->numel / prod_axesA;
-    free_axesB = B->numel / prod_axesB;
-    // find permutation of axes to get into matmul shape
-    for (i = 0; i < ndimA - naxes; ++i)
-    {
-        permA[i] = freeA[i];
-    }
-    for (i = ndimA - naxes, j = 0; i < ndimA; ++i, ++j)
-    {
-        permA[i] = axesA[j];
-    }
-    for (i = 0; i < naxes; ++i)
-    {
-        permB[i] = axesB[i];
-    }
-    for (i = naxes, j = 0; i < ndimB; ++i, ++j)
-    {
-        permB[i] = freeB[j];
-    }
-
-    for (i = 0; i < ndimA; ++i)
-    {
-        newshpA[i] = A->shape[permA[i]];
-    }
-    for (i = 0; i < ndimB; ++i)
-    {
-        newshpB[i] = B->shape[permB[i]];
-    }
-
-    // reshape arrays
-    for (i = 0; i < A->numel; ++i)
-    {
-        k2c_idx2sub(i, Asub, A->shape, ndimA);
-        for (j = 0; j < ndimA; ++j)
-        {
-            Bsub[j] = Asub[permA[j]];
-        }
-        size_t bidx = k2c_sub2idx(Bsub, newshpA, ndimA);
-        reshapeA[bidx] = A->array[i];
-    }
-
-    for (i = 0; i < B->numel; ++i)
-    {
-        k2c_idx2sub(i, Bsub, B->shape, ndimB);
-        for (j = 0; j < ndimB; ++j)
-        {
-            Asub[j] = Bsub[permB[j]];
-        }
-        size_t bidx = k2c_sub2idx(Asub, newshpB, ndimB);
-        reshapeB[bidx] = B->array[i];
-    }
-
-    if (normalize)
-    {
-
-        float sum;
-        float inorm;
-        for (i = 0; i < free_axesA; ++i)
-        {
-            sum = 0;
-            for (j = 0; j < prod_axesA; ++j)
-            {
-                sum += reshapeA[i * prod_axesA + j] * reshapeA[i * prod_axesA + j];
-            }
-            inorm = 1.0f / sqrtf(sum);
-            for (j = 0; j < prod_axesA; ++j)
-            {
-                reshapeA[i * prod_axesA + j] *= inorm;
-            }
-        }
-        for (i = 0; i < free_axesB; ++i)
-        {
-            sum = 0;
-            for (j = 0; j < prod_axesB; ++j)
-            {
-                sum += reshapeB[i + free_axesB * j] * reshapeB[i + free_axesB * j];
-            }
-            inorm = 1.0f / sqrtf(sum);
-            for (j = 0; j < prod_axesB; ++j)
-            {
-                reshapeB[i + free_axesB * j] *= inorm;
-            }
-        }
-    }
-
-    k2c_matmul(C->array, reshapeA, reshapeB, free_axesA,
-               free_axesB, prod_axesA);
-}
-void k2c_bias_add(k2c_tensor *A, const k2c_tensor *b)
-{
-
-    for (size_t i = 0; i < A->numel; i += b->numel)
-    {
-        for (size_t j = 0; j < b->numel; ++j)
-        {
-            A->array[i + j] += b->array[j];
-        }
-    }
-}
 void k2c_idx2sub(const size_t idx, size_t *sub, const size_t *shape, const size_t ndim)
 {
 
@@ -319,6 +113,181 @@ void k2c_matmul(float *C, const float *A, const float *B, const size_t outrows, 
         }
     }
 }
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, int activation, float * fwork,float * output_array,float * input_array,float * kernel_array, float * bias_array) {
+
+    if (input->ndim <=2) {
+        size_t outrows;
+
+        if (input->ndim>1) {
+            outrows = input->shape[0];
+        }
+        else {
+            outrows = 1;
+        }
+        const size_t outcols = kernel->shape[1];
+        const size_t innerdim = kernel->shape[0];
+        const size_t outsize = outrows*outcols;
+        k2c_affine_matmul(output_array,input_array,kernel_array,bias_array,
+                          outrows,outcols,innerdim);
+        if(activation==0)
+            k2c_relu_func(output_array,outsize);
+        else
+            k2c_softmax_func(output_array,outsize);
+    }
+    else {
+        const size_t axesA[1] = {input->ndim-1};
+        const size_t axesB[1] = {0};
+        const size_t naxes = 1;
+        const int normalize = 0;
+
+        k2c_dot(output, input, kernel, axesA, axesB, naxes, normalize, fwork,output_array,input_array,kernel_array);
+        k2c_bias_add(output, bias,output_array,bias_array);
+        if(activation==0)
+            k2c_relu_func(output_array, output->numel);
+        else
+            k2c_softmax_func(output_array,output->numel);
+    }
+}
+void k2c_dot(k2c_tensor* C, const k2c_tensor* A, const k2c_tensor* B, const size_t * axesA, const size_t * axesB, const size_t naxes, const int normalize, float * fwork,float * C_array,float * A_array,float * B_array) {
+    size_t permA[K2C_MAX_NDIM];
+    size_t permB[K2C_MAX_NDIM];
+    size_t prod_axesA = 1;
+    size_t prod_axesB = 1;
+    size_t free_axesA, free_axesB;
+    size_t freeA[K2C_MAX_NDIM];
+    size_t freeB[K2C_MAX_NDIM];
+    size_t count;
+    int isin;
+    size_t newshpA[K2C_MAX_NDIM];
+    size_t newshpB[K2C_MAX_NDIM];
+    const size_t ndimA = A->ndim;
+    const size_t ndimB = B->ndim;
+    float *reshapeA = &fwork[0];   // temp working storage
+    float *reshapeB = &fwork[A->numel];
+    size_t Asub[K2C_MAX_NDIM];
+    size_t Bsub[K2C_MAX_NDIM];
+    // find which axes are free (ie, not being summed over)
+    count=0;
+    size_t i;
+    size_t j;
+    for (i=0; i<ndimA; ++i) {
+        isin = 0;
+        for (j=0; j<naxes; ++j) {
+            if (i==axesA[j]) {
+                isin=1;
+            }
+        }
+        if (!isin) {
+            freeA[count] = i;
+            ++count;
+        }
+    }
+    count=0;
+    for (i=0; i<ndimB; ++i) {
+        isin = 0;
+        for (j=0; j<naxes; ++j) {
+            if (i==axesB[j]) {
+                isin=1;
+            }
+        }
+        if (!isin) {
+            freeB[count] = i;
+            ++count;
+        }
+    }
+
+    // number of elements in inner dimension
+    for (i=0; i < naxes; ++i) {
+        prod_axesA *= A->shape[axesA[i]];
+    }
+    for (i=0; i < naxes; ++i) {
+        prod_axesB *= B->shape[axesB[i]];
+    }
+    // number of elements in free dimension
+    free_axesA = A->numel/prod_axesA;
+    free_axesB = B->numel/prod_axesB;
+    // find permutation of axes to get into matmul shape
+    for (i=0; i<ndimA-naxes; ++i) {
+        permA[i] = freeA[i];
+    }
+    for (i=ndimA-naxes, j=0; i<ndimA; ++i, ++j) {
+        permA[i] = axesA[j];
+    }
+    for (i=0; i<naxes; ++i) {
+        permB[i] = axesB[i];
+    }
+    for (i=naxes, j=0; i<ndimB; ++i, ++j) {
+        permB[i] = freeB[j];
+    }
+
+
+
+    for (i=0; i<ndimA; ++i) {
+        newshpA[i] = A->shape[permA[i]];
+    }
+    for (i=0; i<ndimB; ++i) {
+        newshpB[i] = B->shape[permB[i]];
+    }
+
+    // reshape arrays
+    for (i=0; i<A->numel; ++i) {
+        k2c_idx2sub(i,Asub,A->shape,ndimA);
+        for (j=0; j<ndimA; ++j) {
+            Bsub[j] = Asub[permA[j]];
+        }
+        size_t bidx = k2c_sub2idx(Bsub,newshpA,ndimA);
+        reshapeA[bidx] = A_array[i];
+    }
+
+    for (i=0; i<B->numel; ++i) {
+        k2c_idx2sub(i,Bsub,B->shape,ndimB);
+        for (j=0; j<ndimB; ++j) {
+            Asub[j] = Bsub[permB[j]];
+        }
+        size_t bidx = k2c_sub2idx(Asub,newshpB,ndimB);
+        reshapeB[bidx] = B_array[i];
+    }
+
+
+    if (normalize) {
+
+        float sum;
+        float inorm;
+        for (i=0; i<free_axesA; ++i) {
+            sum = 0;
+            for (j=0; j<prod_axesA; ++j) {
+                sum += reshapeA[i*prod_axesA + j]*reshapeA[i*prod_axesA + j];
+            }
+            inorm = 1.0f/sqrtf(sum);
+            for (j=0; j<prod_axesA; ++j) {
+                reshapeA[i*prod_axesA + j] *= inorm;
+            }
+        }
+        for (i=0; i<free_axesB; ++i) {
+            sum = 0;
+            for (j=0; j<prod_axesB; ++j) {
+                sum += reshapeB[i + free_axesB*j]*reshapeB[i + free_axesB*j];
+            }
+            inorm = 1.0f/sqrtf(sum);
+            for (j=0; j<prod_axesB; ++j) {
+                reshapeB[i + free_axesB*j] *= inorm;
+            }
+        }
+    }
+
+    k2c_matmul(C_array, reshapeA, reshapeB, free_axesA,
+               free_axesB, prod_axesA);
+}
+void k2c_bias_add(k2c_tensor* A, const k2c_tensor* b,float * A_array,float * b_array) {
+
+    for (size_t i=0; i<A->numel; i+=b->numel) {
+        for (size_t j=0; j<b->numel; ++j) {
+            A_array[i+j] += b_array[j];
+        }
+    }
+}
+
+
 k2c_tensor dense_output;
 k2c_tensor dense_kernel;
 k2c_tensor dense_bias;
@@ -85438,11 +85407,9 @@ float dense_2_bias_array[25] = {
 +1.01592459e-01f,
 -1.46292448e-02f,
 };
-
-void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
+float dense_3_output_array[10];
+float* vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output, float dense_input_input_array[784])
 {
-
-    
     // k2c_tensor dense_output = {&dense_output_array[0],1,100,{100,  1,  1,  1,  1}};
     
     dense_output.ndim = 1;
@@ -85453,10 +85420,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_output.shape[3] = 1;
     dense_output.shape[4] = 1;
 
-    for (size_t z11 = 0; z11 < 100; z11++)
-    {
-        dense_output.array[z11] = dense_output_array[z11];
-    }
+    // for (size_t z11 = 0; z11 < 100; z11++)
+    // {
+    //     dense_output.array[z11] = dense_output_array[z11];
+    // }
 
 // k2c_tensor dense_kernel = {&dense_kernel_array[0],2,78400,{784,100,  1,  1,  1}};
     
@@ -85468,10 +85435,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_kernel.shape[3] = 1;
     dense_kernel.shape[4] = 1;
 
-    for (size_t z10 = 0; z10 < 78400; z10++)
-    {
-        dense_kernel.array[z10] = dense_kernel_array[z10];
-    }
+    // for (size_t z10 = 0; z10 < 78400; z10++)
+    // {
+    //     dense_kernel.array[z10] = dense_kernel_array[z10];
+    // }
 
 // k2c_tensor dense_bias = {&dense_bias_array[0],1,100,{100,  1,  1,  1,  1}};
     
@@ -85483,10 +85450,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_bias.shape[3] = 1;
     dense_bias.shape[4] = 1;
 
-    for (size_t z9 = 0; z9 < 100; z9++)
-    {
-        dense_bias.array[z9] = dense_bias_array[z9];
-    }
+    // for (size_t z9 = 0; z9 < 100; z9++)
+    // {
+    //     dense_bias.array[z9] = dense_bias_array[z9];
+    // }
 
     
     // k2c_tensor dense_1_output = {&dense_1_output_array[0],1,50,{50, 1, 1, 1, 1}};
@@ -85499,10 +85466,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_1_output.shape[3] = 1;
     dense_1_output.shape[4] = 1;
 
-    for (size_t z8 = 0; z8 < 50; z8++)
-    {
-        dense_1_output.array[z8] = dense_1_output_array[z8];
-    }
+    // for (size_t z8 = 0; z8 < 50; z8++)
+    // {
+    //     dense_1_output.array[z8] = dense_1_output_array[z8];
+    // }
 
 // k2c_tensor dense_1_kernel = {&dense_1_kernel_array[0],2,5000,{100, 50,  1,  1,  1}};
     
@@ -85514,10 +85481,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_1_kernel.shape[3] = 1;
     dense_1_kernel.shape[4] = 1;
 
-    for (size_t z7 = 0; z7 < 5000; z7++)
-    {
-        dense_1_kernel.array[z7] = dense_1_kernel_array[z7];
-    }
+    // for (size_t z7 = 0; z7 < 5000; z7++)
+    // {
+    //     dense_1_kernel.array[z7] = dense_1_kernel_array[z7];
+    // }
 
 // k2c_tensor dense_1_bias = {&dense_1_bias_array[0],1,50,{50, 1, 1, 1, 1}};
     
@@ -85529,10 +85496,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_1_bias.shape[3] = 1;
     dense_1_bias.shape[4] = 1;
 
-    for (size_t z6 = 0; z6 < 50; z6++)
-    {
-        dense_1_bias.array[z6] = dense_1_bias_array[z6];
-    }
+    // for (size_t z6 = 0; z6 < 50; z6++)
+    // {
+    //     dense_1_bias.array[z6] = dense_1_bias_array[z6];
+    // }
 
     
     // k2c_tensor dense_2_output = {&dense_2_output_array[0],1,25,{25, 1, 1, 1, 1}};
@@ -85545,10 +85512,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_2_output.shape[3] = 1;
     dense_2_output.shape[4] = 1;
 
-    for (size_t z5 = 0; z5 < 25; z5++)
-    {
-        dense_2_output.array[z5] = dense_2_output_array[z5];
-    }
+    // for (size_t z5 = 0; z5 < 25; z5++)
+    // {
+    //     dense_2_output.array[z5] = dense_2_output_array[z5];
+    // }
 // k2c_tensor dense_2_kernel = {&dense_2_kernel_array[0],2,1250,{50,25, 1, 1, 1}};
     
     dense_2_kernel.ndim = 2;
@@ -85559,10 +85526,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_2_kernel.shape[3] = 1;
     dense_2_kernel.shape[4] = 1;
 
-    for (size_t z4 = 0; z4 < 1250; z4++)
-    {
-        dense_2_kernel.array[z4] = dense_2_kernel_array[z4];
-    }
+    // for (size_t z4 = 0; z4 < 1250; z4++)
+    // {
+    //     dense_2_kernel.array[z4] = dense_2_kernel_array[z4];
+    // }
 
 // k2c_tensor dense_2_bias = {&dense_2_bias_array[0],1,25,{25, 1, 1, 1, 1}};
     
@@ -85574,10 +85541,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_2_bias.shape[3] = 1;
     dense_2_bias.shape[4] = 1;
 
-    for (size_t z3 = 0; z3 < 25; z3++)
-    {
-        dense_2_bias.array[z3] = dense_2_bias_array[z3];
-    }
+    // for (size_t z3 = 0; z3 < 25; z3++)
+    // {
+    //     dense_2_bias.array[z3] = dense_2_bias_array[z3];
+    // }
 
 // k2c_tensor dense_3_kernel = {&dense_3_kernel_array[0],2,250,{25,10, 1, 1, 1}};
     
@@ -85589,16 +85556,16 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
     dense_3_kernel.shape[3] = 1;
     dense_3_kernel.shape[4] = 1;
 
-    for (size_t z2 = 0; z2 < 250; z2++)
-    {
-        dense_3_kernel.array[z2] = dense_3_kernel_array[z2];
-    }
+    // for (size_t z2 = 0; z2 < 250; z2++)
+    // {
+    //     dense_3_kernel.array[z2] = dense_3_kernel_array[z2];
+    // }
 // k2c_tensor dense_3_bias = {&dense_3_bias_array[0],1,10,{10, 1, 1, 1, 1}};
     
-    for (size_t z1 = 0; z1 < 10; z1++)
-    {
-        dense_3_bias.array[z1] = dense_3_bias_array[z1];
-    }
+    // for (size_t z1 = 0; z1 < 10; z1++)
+    // {
+    //     dense_3_bias.array[z1] = dense_3_bias_array[z1];
+    // }
     dense_3_bias.ndim = 1;
     dense_3_bias.numel = 10;
     dense_3_bias.shape[0] = 10;
@@ -85609,8 +85576,10 @@ void vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output)
 
     
 
-    k2c_dense(&dense_output, dense_input_input, &dense_kernel, &dense_bias, 0, dense_fwork);
-    k2c_dense(&dense_1_output, &dense_output, &dense_1_kernel, &dense_1_bias, 0, dense_1_fwork);
-    k2c_dense(&dense_2_output, &dense_1_output, &dense_2_kernel, &dense_2_bias, 0, dense_2_fwork);
-    k2c_dense(dense_3_output, &dense_2_output, &dense_3_kernel, &dense_3_bias, 1, dense_3_fwork);
+    k2c_dense(&dense_output, dense_input_input, &dense_kernel, &dense_bias, 0, dense_fwork, dense_output_array, dense_input_input_array, dense_kernel_array, dense_bias_array);
+    k2c_dense(&dense_1_output, &dense_output, &dense_1_kernel, &dense_1_bias, 0, dense_1_fwork, dense_1_output_array, dense_output_array, dense_1_kernel_array, dense_1_bias_array);
+    k2c_dense(&dense_2_output, &dense_1_output, &dense_2_kernel, &dense_2_bias, 0, dense_2_fwork, dense_2_output_array, dense_1_output_array, dense_2_kernel_array, dense_2_bias_array);
+    k2c_dense(dense_3_output, &dense_2_output, &dense_3_kernel, &dense_3_bias, 1, dense_3_fwork, dense_3_output_array, dense_2_output_array, dense_3_kernel_array, dense_3_bias_array);
+
+    return dense_3_output_array;
 }
