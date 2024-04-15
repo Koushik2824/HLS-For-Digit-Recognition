@@ -8439,8 +8439,7 @@ int main()
     vlsiModel(&test10_dense_input_input, &c_dense_3_test10);
 
     clock_t t1 = clock();
-    printf("Average time over 10 tests: %e s \n",
-           ((double)t1 - t0) / (double)CLOCKS_PER_SEC / (double)10);
+    printf("Average time over 10 tests: %e s \n", ((double)t1 - t0) / (double)CLOCKS_PER_SEC / (double)10);
     errors[0] = maxabs(&keras_dense_3_test1, &c_dense_3_test1);
     errors[1] = maxabs(&keras_dense_3_test2, &c_dense_3_test2);
     errors[2] = maxabs(&keras_dense_3_test3, &c_dense_3_test3);
