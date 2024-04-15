@@ -8425,7 +8425,6 @@ int main()
     float errors[10];
     size_t num_tests = 10;
     size_t num_outputs = 1;
-    vlsiModel_initialize();
     clock_t t0 = clock();
     vlsiModel(&test1_dense_input_input, &c_dense_3_test1);
     vlsiModel(&test2_dense_input_input, &c_dense_3_test2);
@@ -8459,7 +8458,6 @@ int main()
         }
     }
     printf("Max absolute error for 10 tests: %e \n", maxerror);
-    vlsiModel_terminate();
     if (maxerror > 1e-05)
     {
         return 1;

@@ -16,11 +16,9 @@ struct k2c_tensor
     size_t shape[K2C_MAX_NDIM];
 };
 typedef struct k2c_tensor k2c_tensor;
-
-
 void vlsiModel(k2c_tensor* dense_input_input, k2c_tensor* dense_3_output); 
 void k2c_relu_func(float *x, const size_t size);
-void k2c_sigmoid_func(float *x, const size_t size);
+void k2c_softmax_func(float *x, const size_t size);
 void k2c_idx2sub(const size_t idx, size_t *sub, const size_t *shape, const size_t ndim);
 size_t k2c_sub2idx(const size_t *sub, const size_t *shape, const size_t ndim);
 void k2c_matmul(float *C, const float *A, const float *B, const size_t outrows, const size_t outcols, const size_t innerdim);
