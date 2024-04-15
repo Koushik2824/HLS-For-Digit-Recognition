@@ -1,0 +1,399 @@
+
+
+================================================================
+== Vivado HLS Report for 'k2c_affine_matmul'
+================================================================
+* Date:           Mon Apr 15 13:14:22 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        vlsiModel
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tfbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     9.122|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |    ?|    ?|         1|          -|          -|     ?|    no    |
+        |- Loop 2         |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 2.1      |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        |  ++ Loop 2.1.1  |    ?|    ?|        11|          -|          -|     ?|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 23
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	3  / (!exitcond3)
+	4  / (exitcond3)
+4 --> 
+	5  / (!exitcond2)
+5 --> 
+	6  / (!exitcond1)
+	4  / (exitcond1)
+6 --> 
+	7  / (!exitcond)
+	17  / (exitcond)
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	6  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	5  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.60>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%outcols_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %outcols)"   --->   Operation 24 'read' 'outcols_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%outrows_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %outrows)"   --->   Operation 25 'read' 'outrows_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [2/2] (8.60ns)   --->   "%tmp = mul i64 %outcols_read, %outrows_read" [vlsiModel.c:90]   --->   Operation 26 'mul' 'tmp' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 8.60>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%innerdim_read = call i64 @_ssdm_op_Read.ap_auto.i64(i64 %innerdim)"   --->   Operation 27 'read' 'innerdim_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/2] (8.60ns)   --->   "%tmp = mul i64 %outcols_read, %outrows_read" [vlsiModel.c:90]   --->   Operation 28 'mul' 'tmp' <Predicate = true> <Delay = 8.60> <Core = "MulnS">   --->   Core 17 'MulnS' <Latency = 1> <II = 1> <Delay = 8.60> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (1.35ns)   --->   "br label %1" [vlsiModel.c:90]   --->   Operation 29 'br' <Predicate = true> <Delay = 1.35>
+
+State 3 <SV = 2> <Delay = 2.77>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%p = phi i17 [ 0, %0 ], [ %p_1, %2 ]"   --->   Operation 30 'phi' 'p' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%p_cast = zext i17 %p to i64" [vlsiModel.c:90]   --->   Operation 31 'zext' 'p_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (2.34ns)   --->   "%exitcond3 = icmp eq i64 %p_cast, %tmp" [vlsiModel.c:90]   --->   Operation 32 'icmp' 'exitcond3' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (1.86ns)   --->   "%p_1 = add i17 %p, 1" [vlsiModel.c:90]   --->   Operation 33 'add' 'p_1' <Predicate = true> <Delay = 1.86> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader4.preheader, label %2" [vlsiModel.c:90]   --->   Operation 34 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%C_addr = getelementptr [80000 x float]* %C, i64 0, i64 %p_cast" [vlsiModel.c:92]   --->   Operation 35 'getelementptr' 'C_addr' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (2.77ns)   --->   "store float 0.000000e+00, float* %C_addr, align 4" [vlsiModel.c:92]   --->   Operation 36 'store' <Predicate = (!exitcond3)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "br label %1" [vlsiModel.c:90]   --->   Operation 37 'br' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_77 = trunc i64 %outcols_read to i18" [vlsiModel.c:96]   --->   Operation 38 'trunc' 'tmp_77' <Predicate = (exitcond3)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_78 = trunc i64 %innerdim_read to i18" [vlsiModel.c:97]   --->   Operation 39 'trunc' 'tmp_78' <Predicate = (exitcond3)> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (1.35ns)   --->   "br label %.preheader4" [vlsiModel.c:94]   --->   Operation 40 'br' <Predicate = (exitcond3)> <Delay = 1.35>
+
+State 4 <SV = 3> <Delay = 6.35>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%i = phi i64 [ 0, %.preheader4.preheader ], [ %i_64, %.preheader4.loopexit ]"   --->   Operation 41 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_79 = trunc i64 %i to i18" [vlsiModel.c:94]   --->   Operation 42 'trunc' 'tmp_79' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (2.34ns)   --->   "%exitcond2 = icmp eq i64 %i, %outrows_read" [vlsiModel.c:94]   --->   Operation 43 'icmp' 'exitcond2' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 44 [1/1] (2.99ns)   --->   "%i_64 = add i64 1, %i" [vlsiModel.c:94]   --->   Operation 44 'add' 'i_64' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %7, label %3" [vlsiModel.c:94]   --->   Operation 45 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (6.35ns)   --->   "%outrowidx = mul i18 %tmp_79, %tmp_77" [vlsiModel.c:96]   --->   Operation 46 'mul' 'outrowidx' <Predicate = (!exitcond2)> <Delay = 6.35> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 47 [1/1] (6.35ns)   --->   "%inneridx = mul i18 %tmp_79, %tmp_78" [vlsiModel.c:97]   --->   Operation 47 'mul' 'inneridx' <Predicate = (!exitcond2)> <Delay = 6.35> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 48 [1/1] (1.35ns)   --->   "br label %4" [vlsiModel.c:98]   --->   Operation 48 'br' <Predicate = (!exitcond2)> <Delay = 1.35>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "ret void" [vlsiModel.c:107]   --->   Operation 49 'ret' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 2.99>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "%j = phi i64 [ 0, %3 ], [ %j_12, %6 ]"   --->   Operation 50 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%tmp_80 = trunc i64 %j to i18" [vlsiModel.c:98]   --->   Operation 51 'trunc' 'tmp_80' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 52 [1/1] (2.34ns)   --->   "%exitcond1 = icmp eq i64 %j, %outcols_read" [vlsiModel.c:98]   --->   Operation 52 'icmp' 'exitcond1' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 53 [1/1] (2.99ns)   --->   "%j_12 = add i64 1, %j" [vlsiModel.c:98]   --->   Operation 53 'add' 'j_12' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader4.loopexit, label %.preheader.preheader" [vlsiModel.c:98]   --->   Operation 54 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (1.88ns)   --->   "%sum2 = add i18 %tmp_80, %outrowidx" [vlsiModel.c:98]   --->   Operation 55 'add' 'sum2' <Predicate = (!exitcond1)> <Delay = 1.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%sum2_cast = zext i18 %sum2 to i64" [vlsiModel.c:98]   --->   Operation 56 'zext' 'sum2_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%C_addr_5 = getelementptr [80000 x float]* %C, i64 0, i64 %sum2_cast" [vlsiModel.c:102]   --->   Operation 57 'getelementptr' 'C_addr_5' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (1.35ns)   --->   "br label %.preheader" [vlsiModel.c:100]   --->   Operation 58 'br' <Predicate = (!exitcond1)> <Delay = 1.35>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "br label %.preheader4"   --->   Operation 59 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 9.12>
+ST_6 : Operation 60 [1/1] (0.00ns)   --->   "%k = phi i64 [ %k_3, %5 ], [ 0, %.preheader.preheader ]"   --->   Operation 60 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_81 = trunc i64 %k to i18" [vlsiModel.c:100]   --->   Operation 61 'trunc' 'tmp_81' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (2.34ns)   --->   "%exitcond = icmp eq i64 %k, %innerdim_read" [vlsiModel.c:100]   --->   Operation 62 'icmp' 'exitcond' <Predicate = true> <Delay = 2.34> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.34> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 63 [1/1] (2.99ns)   --->   "%k_3 = add i64 1, %k" [vlsiModel.c:100]   --->   Operation 63 'add' 'k_3' <Predicate = true> <Delay = 2.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %6, label %5" [vlsiModel.c:100]   --->   Operation 64 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (1.88ns)   --->   "%sum5 = add i18 %tmp_81, %inneridx" [vlsiModel.c:100]   --->   Operation 65 'add' 'sum5' <Predicate = (!exitcond)> <Delay = 1.88> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 66 [1/1] (0.00ns)   --->   "%sum5_cast = zext i18 %sum5 to i64" [vlsiModel.c:100]   --->   Operation 66 'zext' 'sum5_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%A_addr = getelementptr [80000 x float]* %A, i64 0, i64 %sum5_cast" [vlsiModel.c:102]   --->   Operation 67 'getelementptr' 'A_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_6 : Operation 68 [2/2] (2.77ns)   --->   "%A_load = load float* %A_addr, align 4" [vlsiModel.c:102]   --->   Operation 68 'load' 'A_load' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_6 : Operation 69 [1/1] (2.82ns)   --->   "%tmp_8 = mul i18 %tmp_81, %tmp_77" [vlsiModel.c:102]   --->   Operation 69 'mul' 'tmp_8' <Predicate = (!exitcond)> <Delay = 2.82> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 70 [1/1] (3.53ns)   --->   "%sum8 = add i18 %tmp_8, %tmp_80" [vlsiModel.c:102]   --->   Operation 70 'add' 'sum8' <Predicate = (!exitcond)> <Delay = 3.53> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.35> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%sum8_cast = zext i18 %sum8 to i64" [vlsiModel.c:102]   --->   Operation 71 'zext' 'sum8_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%B_addr = getelementptr [80000 x float]* %B, i64 0, i64 %sum8_cast" [vlsiModel.c:102]   --->   Operation 72 'getelementptr' 'B_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_6 : Operation 73 [2/2] (2.77ns)   --->   "%B_load = load float* %B_addr, align 4" [vlsiModel.c:102]   --->   Operation 73 'load' 'B_load' <Predicate = (!exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%d_addr = getelementptr [80000 x float]* %d, i64 0, i64 %j" [vlsiModel.c:104]   --->   Operation 74 'getelementptr' 'd_addr' <Predicate = (exitcond)> <Delay = 0.00>
+ST_6 : Operation 75 [2/2] (2.77ns)   --->   "%d_load = load float* %d_addr, align 4" [vlsiModel.c:104]   --->   Operation 75 'load' 'd_load' <Predicate = (exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_6 : Operation 76 [2/2] (2.77ns)   --->   "%C_load = load float* %C_addr_5, align 4" [vlsiModel.c:104]   --->   Operation 76 'load' 'C_load' <Predicate = (exitcond)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+
+State 7 <SV = 6> <Delay = 2.77>
+ST_7 : Operation 77 [1/2] (2.77ns)   --->   "%A_load = load float* %A_addr, align 4" [vlsiModel.c:102]   --->   Operation 77 'load' 'A_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_7 : Operation 78 [1/2] (2.77ns)   --->   "%B_load = load float* %B_addr, align 4" [vlsiModel.c:102]   --->   Operation 78 'load' 'B_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+
+State 8 <SV = 7> <Delay = 8.54>
+ST_8 : Operation 79 [3/3] (8.54ns)   --->   "%tmp_9 = fmul float %A_load, %B_load" [vlsiModel.c:102]   --->   Operation 79 'fmul' 'tmp_9' <Predicate = true> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 8.54>
+ST_9 : Operation 80 [2/3] (8.54ns)   --->   "%tmp_9 = fmul float %A_load, %B_load" [vlsiModel.c:102]   --->   Operation 80 'fmul' 'tmp_9' <Predicate = true> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 81 [2/2] (2.77ns)   --->   "%C_load_1 = load float* %C_addr_5, align 4" [vlsiModel.c:102]   --->   Operation 81 'load' 'C_load_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+
+State 10 <SV = 9> <Delay = 8.54>
+ST_10 : Operation 82 [1/3] (8.54ns)   --->   "%tmp_9 = fmul float %A_load, %B_load" [vlsiModel.c:102]   --->   Operation 82 'fmul' 'tmp_9' <Predicate = true> <Delay = 8.54> <Core = "FMul">   --->   Core 100 'FMul' <Latency = 2> <II = 1> <Delay = 8.54> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 83 [1/2] (2.77ns)   --->   "%C_load_1 = load float* %C_addr_5, align 4" [vlsiModel.c:102]   --->   Operation 83 'load' 'C_load_1' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+
+State 11 <SV = 10> <Delay = 6.51>
+ST_11 : Operation 84 [5/5] (6.51ns)   --->   "%tmp_10 = fadd float %C_load_1, %tmp_9" [vlsiModel.c:102]   --->   Operation 84 'fadd' 'tmp_10' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 6.51>
+ST_12 : Operation 85 [4/5] (6.51ns)   --->   "%tmp_10 = fadd float %C_load_1, %tmp_9" [vlsiModel.c:102]   --->   Operation 85 'fadd' 'tmp_10' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 6.51>
+ST_13 : Operation 86 [3/5] (6.51ns)   --->   "%tmp_10 = fadd float %C_load_1, %tmp_9" [vlsiModel.c:102]   --->   Operation 86 'fadd' 'tmp_10' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 6.51>
+ST_14 : Operation 87 [2/5] (6.51ns)   --->   "%tmp_10 = fadd float %C_load_1, %tmp_9" [vlsiModel.c:102]   --->   Operation 87 'fadd' 'tmp_10' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 6.51>
+ST_15 : Operation 88 [1/5] (6.51ns)   --->   "%tmp_10 = fadd float %C_load_1, %tmp_9" [vlsiModel.c:102]   --->   Operation 88 'fadd' 'tmp_10' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 2.77>
+ST_16 : Operation 89 [1/1] (2.77ns)   --->   "store float %tmp_10, float* %C_addr_5, align 4" [vlsiModel.c:102]   --->   Operation 89 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_16 : Operation 90 [1/1] (0.00ns)   --->   "br label %.preheader" [vlsiModel.c:100]   --->   Operation 90 'br' <Predicate = true> <Delay = 0.00>
+
+State 17 <SV = 6> <Delay = 2.77>
+ST_17 : Operation 91 [1/2] (2.77ns)   --->   "%d_load = load float* %d_addr, align 4" [vlsiModel.c:104]   --->   Operation 91 'load' 'd_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_17 : Operation 92 [1/2] (2.77ns)   --->   "%C_load = load float* %C_addr_5, align 4" [vlsiModel.c:104]   --->   Operation 92 'load' 'C_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+
+State 18 <SV = 7> <Delay = 6.51>
+ST_18 : Operation 93 [5/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [vlsiModel.c:104]   --->   Operation 93 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 8> <Delay = 6.51>
+ST_19 : Operation 94 [4/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [vlsiModel.c:104]   --->   Operation 94 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 9> <Delay = 6.51>
+ST_20 : Operation 95 [3/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [vlsiModel.c:104]   --->   Operation 95 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 10> <Delay = 6.51>
+ST_21 : Operation 96 [2/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [vlsiModel.c:104]   --->   Operation 96 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 11> <Delay = 6.51>
+ST_22 : Operation 97 [1/5] (6.51ns)   --->   "%tmp_s = fadd float %C_load, %d_load" [vlsiModel.c:104]   --->   Operation 97 'fadd' 'tmp_s' <Predicate = true> <Delay = 6.51> <Core = "FAddSub">   --->   Core 99 'FAddSub' <Latency = 4> <II = 1> <Delay = 6.51> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 12> <Delay = 2.77>
+ST_23 : Operation 98 [1/1] (2.77ns)   --->   "store float %tmp_s, float* %C_addr_5, align 4" [vlsiModel.c:104]   --->   Operation 98 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 80000> <RAM>
+ST_23 : Operation 99 [1/1] (0.00ns)   --->   "br label %4" [vlsiModel.c:98]   --->   Operation 99 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.61ns
+The critical path consists of the following:
+	wire read on port 'outcols' [9]  (0 ns)
+	'mul' operation ('tmp', vlsiModel.c:90) [11]  (8.61 ns)
+
+ <State 2>: 8.61ns
+The critical path consists of the following:
+	'mul' operation ('tmp', vlsiModel.c:90) [11]  (8.61 ns)
+
+ <State 3>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('p') with incoming values : ('p', vlsiModel.c:90) [14]  (0 ns)
+	'getelementptr' operation ('C_addr', vlsiModel.c:92) [20]  (0 ns)
+	'store' operation (vlsiModel.c:92) of constant 0 on array 'C' [21]  (2.77 ns)
+
+ <State 4>: 6.35ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', vlsiModel.c:94) [28]  (0 ns)
+	'mul' operation ('outrowidx', vlsiModel.c:96) [34]  (6.35 ns)
+
+ <State 5>: 3ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', vlsiModel.c:98) [38]  (0 ns)
+	'add' operation ('j', vlsiModel.c:98) [41]  (3 ns)
+
+ <State 6>: 9.12ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('k', vlsiModel.c:100) [49]  (0 ns)
+	'mul' operation ('tmp_8', vlsiModel.c:102) [59]  (2.82 ns)
+	'add' operation ('sum8', vlsiModel.c:102) [60]  (3.53 ns)
+	'getelementptr' operation ('B_addr', vlsiModel.c:102) [62]  (0 ns)
+	'load' operation ('B_load', vlsiModel.c:102) on array 'B' [63]  (2.77 ns)
+
+ <State 7>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('A_load', vlsiModel.c:102) on array 'A' [58]  (2.77 ns)
+
+ <State 8>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_9', vlsiModel.c:102) [64]  (8.54 ns)
+
+ <State 9>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_9', vlsiModel.c:102) [64]  (8.54 ns)
+
+ <State 10>: 8.54ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_9', vlsiModel.c:102) [64]  (8.54 ns)
+
+ <State 11>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_10', vlsiModel.c:102) [66]  (6.51 ns)
+
+ <State 12>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_10', vlsiModel.c:102) [66]  (6.51 ns)
+
+ <State 13>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_10', vlsiModel.c:102) [66]  (6.51 ns)
+
+ <State 14>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_10', vlsiModel.c:102) [66]  (6.51 ns)
+
+ <State 15>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_10', vlsiModel.c:102) [66]  (6.51 ns)
+
+ <State 16>: 2.77ns
+The critical path consists of the following:
+	'store' operation (vlsiModel.c:102) of variable 'tmp_10', vlsiModel.c:102 on array 'C' [67]  (2.77 ns)
+
+ <State 17>: 2.77ns
+The critical path consists of the following:
+	'load' operation ('d_load', vlsiModel.c:104) on array 'd' [71]  (2.77 ns)
+
+ <State 18>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', vlsiModel.c:104) [73]  (6.51 ns)
+
+ <State 19>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', vlsiModel.c:104) [73]  (6.51 ns)
+
+ <State 20>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', vlsiModel.c:104) [73]  (6.51 ns)
+
+ <State 21>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', vlsiModel.c:104) [73]  (6.51 ns)
+
+ <State 22>: 6.51ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_s', vlsiModel.c:104) [73]  (6.51 ns)
+
+ <State 23>: 2.77ns
+The critical path consists of the following:
+	'store' operation (vlsiModel.c:104) of variable 'tmp_s', vlsiModel.c:104 on array 'C' [74]  (2.77 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

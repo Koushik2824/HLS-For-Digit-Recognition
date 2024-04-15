@@ -66,20 +66,20 @@ void k2c_softmax_func(float *x, const size_t size)
         }
     }
 
-    for (size_t i = 0; i < size; ++i)
+    for (size_t j = 0; j < size; ++j)
     {
-        x[i] = expf(x[i] - xmax);
+        x[j] = expf(x[j] - xmax);
     }
 
-    for (size_t i = 0; i < size; ++i)
+    for (size_t k = 0; k < size; ++k)
     {
-        sum += x[i];
+        sum += x[k];
     }
 
     sum = 1.0f / sum;
-    for (size_t i = 0; i < size; ++i)
+    for (size_t l = 0; l < size; ++l)
     {
-        x[i] = x[i] * sum;
+        x[l] = x[l] * sum;
     }
 }
 void k2c_affine_matmul(float *C, const float *A, const float *B, const float *d, const size_t outrows, const size_t outcols, const size_t innerdim)

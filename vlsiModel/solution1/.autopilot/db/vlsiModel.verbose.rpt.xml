@@ -1,0 +1,315 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'vlsiModel'" level="0">
+<item name = "Date">Mon Apr 15 13:14:45 2024
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">vlsiModel</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">artix7</item>
+<item name = "Target device">xc7a200tfbg676-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.122, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_k2c_dense_1_fu_788">k2c_dense_1, ?, ?, ?, ?, none</column>
+<column name="grp_k2c_dense_3_fu_813">k2c_dense_3, ?, ?, ?, ?, none</column>
+<column name="grp_k2c_dense_2_fu_837">k2c_dense_2, ?, ?, ?, ?, none</column>
+<column name="grp_k2c_dense_fu_861">k2c_dense, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">100, 100, 1, -, -, 100, no</column>
+<column name="- Loop 2">156800, 156800, 2, -, -, 78400, no</column>
+<column name="- Loop 3">200, 200, 2, -, -, 100, no</column>
+<column name="- Loop 4">50, 50, 1, -, -, 50, no</column>
+<column name="- Loop 5">10000, 10000, 2, -, -, 5000, no</column>
+<column name="- Loop 6">100, 100, 2, -, -, 50, no</column>
+<column name="- Loop 7">25, 25, 1, -, -, 25, no</column>
+<column name="- Loop 8">2500, 2500, 2, -, -, 1250, no</column>
+<column name="- Loop 9">50, 50, 2, -, -, 25, no</column>
+<column name="- Loop 10">500, 500, 2, -, -, 250, no</column>
+<column name="- Loop 11">20, 20, 2, -, -, 10, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 310</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">278, 340, 50546, 41027</column>
+<column name="Memory">3123, -, 64, 18</column>
+<column name="Multiplexer">-, -, -, 1268</column>
+<column name="Register">-, -, 321, -</column>
+<specialColumn name="Available">730, 740, 269200, 129000</specialColumn>
+<specialColumn name="Utilization (%)">465, 45, 18, 33</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="grp_k2c_dense_fu_861">k2c_dense, 256, 82, 11655, 9262</column>
+<column name="grp_k2c_dense_1_fu_788">k2c_dense_1, 2, 94, 14039, 12291</column>
+<column name="grp_k2c_dense_2_fu_837">k2c_dense_2, 4, 82, 12419, 9734</column>
+<column name="grp_k2c_dense_3_fu_813">k2c_dense_3, 16, 82, 12433, 9740</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="dense_1_kernel_array_U">vlsiModel_dense_1DeQ, 16, 0, 0, 5000, 32, 1, 160000</column>
+<column name="dense_1_bias_array_U">vlsiModel_dense_1Ffa, 1, 0, 0, 50, 32, 1, 1600</column>
+<column name="dense_2_kernel_array_U">vlsiModel_dense_2IfE, 4, 0, 0, 1250, 32, 1, 40000</column>
+<column name="dense_2_bias_array_U">vlsiModel_dense_2KfY, 0, 32, 13, 25, 32, 1, 800</column>
+<column name="dense_3_kernel_array_U">vlsiModel_dense_3Mgi, 1, 0, 0, 250, 32, 1, 8000</column>
+<column name="dense_3_bias_array_U">vlsiModel_dense_3OgC, 0, 32, 5, 10, 32, 1, 320</column>
+<column name="dense_bias_array_U">vlsiModel_dense_bAem, 1, 0, 0, 100, 32, 1, 3200</column>
+<column name="dense_kernel_shape_U">vlsiModel_dense_kQgW, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_output_shape_U">vlsiModel_dense_kQgW, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_1_kernel_shape_U">vlsiModel_dense_kQgW, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_1_output_shape_U">vlsiModel_dense_kQgW, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_2_kernel_shape_U">vlsiModel_dense_kQgW, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_2_output_shape_U">vlsiModel_dense_kQgW, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_3_kernel_shape_U">vlsiModel_dense_kQgW, 4, 0, 0, 5, 64, 1, 320</column>
+<column name="dense_kernel_array_U">vlsiModel_dense_kyd2, 256, 0, 0, 78400, 32, 1, 2508800</column>
+<column name="dense_output_array_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_kernel_array_0_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_bias_array_1_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_1_output_array_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_1_kernel_array_6_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_1_bias_array_7_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_2_output_array_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_2_kernel_array_4_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_2_bias_array_5_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_3_kernel_array_2_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+<column name="dense_3_bias_array_3_U">vlsiModel_dense_oxdS, 256, 0, 0, 80000, 32, 1, 2560000</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="z10_1_fu_947_p2">+, 0, 0, 24, 17, 1</column>
+<column name="z11_fu_930_p2">+, 0, 0, 15, 7, 1</column>
+<column name="z1_1_fu_1172_p2">+, 0, 0, 13, 4, 1</column>
+<column name="z2_1_fu_1155_p2">+, 0, 0, 15, 8, 1</column>
+<column name="z3_1_fu_1126_p2">+, 0, 0, 15, 5, 1</column>
+<column name="z4_1_fu_1103_p2">+, 0, 0, 18, 11, 1</column>
+<column name="z5_1_fu_1074_p2">+, 0, 0, 15, 5, 1</column>
+<column name="z6_1_fu_1045_p2">+, 0, 0, 15, 6, 1</column>
+<column name="z7_1_fu_1022_p2">+, 0, 0, 20, 13, 1</column>
+<column name="z8_1_fu_993_p2">+, 0, 0, 15, 6, 1</column>
+<column name="z9_1_fu_964_p2">+, 0, 0, 15, 7, 1</column>
+<column name="tmp_1_fu_1068_p2">icmp, 0, 0, 11, 5, 4</column>
+<column name="tmp_2_fu_941_p2">icmp, 0, 0, 18, 17, 17</column>
+<column name="tmp_3_fu_1097_p2">icmp, 0, 0, 13, 11, 11</column>
+<column name="tmp_4_fu_958_p2">icmp, 0, 0, 11, 7, 6</column>
+<column name="tmp_5_fu_1120_p2">icmp, 0, 0, 11, 5, 4</column>
+<column name="tmp_6_fu_987_p2">icmp, 0, 0, 11, 6, 5</column>
+<column name="tmp_7_fu_1149_p2">icmp, 0, 0, 11, 8, 4</column>
+<column name="tmp_8_fu_1016_p2">icmp, 0, 0, 13, 13, 13</column>
+<column name="tmp_9_fu_1166_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="tmp_fu_924_p2">icmp, 0, 0, 11, 7, 6</column>
+<column name="tmp_s_fu_1039_p2">icmp, 0, 0, 11, 6, 5</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">185, 42, 1, 42</column>
+<column name="dense_1_bias_array_7_address0">15, 3, 17, 51</column>
+<column name="dense_1_bias_array_7_ce0">15, 3, 1, 3</column>
+<column name="dense_1_kernel_array_6_address0">15, 3, 17, 51</column>
+<column name="dense_1_kernel_array_6_ce0">15, 3, 1, 3</column>
+<column name="dense_1_kernel_shape_address0">27, 5, 3, 15</column>
+<column name="dense_1_kernel_shape_address1">15, 3, 3, 9</column>
+<column name="dense_1_kernel_shape_ce0">15, 3, 1, 3</column>
+<column name="dense_1_kernel_shape_d0">21, 4, 64, 256</column>
+<column name="dense_1_output_array_address0">21, 4, 17, 68</column>
+<column name="dense_1_output_array_ce0">21, 4, 1, 4</column>
+<column name="dense_1_output_array_d0">15, 3, 32, 96</column>
+<column name="dense_1_output_array_we0">15, 3, 1, 3</column>
+<column name="dense_1_output_shape_address0">27, 5, 3, 15</column>
+<column name="dense_1_output_shape_address1">15, 3, 3, 9</column>
+<column name="dense_1_output_shape_ce0">15, 3, 1, 3</column>
+<column name="dense_1_output_shape_d0">15, 3, 64, 192</column>
+<column name="dense_2_bias_array_5_address0">15, 3, 17, 51</column>
+<column name="dense_2_bias_array_5_ce0">15, 3, 1, 3</column>
+<column name="dense_2_kernel_array_4_address0">15, 3, 17, 51</column>
+<column name="dense_2_kernel_array_4_ce0">15, 3, 1, 3</column>
+<column name="dense_2_kernel_shape_address0">27, 5, 3, 15</column>
+<column name="dense_2_kernel_shape_address1">15, 3, 3, 9</column>
+<column name="dense_2_kernel_shape_ce0">15, 3, 1, 3</column>
+<column name="dense_2_kernel_shape_d0">21, 4, 64, 256</column>
+<column name="dense_2_output_array_address0">21, 4, 17, 68</column>
+<column name="dense_2_output_array_ce0">21, 4, 1, 4</column>
+<column name="dense_2_output_array_d0">15, 3, 32, 96</column>
+<column name="dense_2_output_array_we0">15, 3, 1, 3</column>
+<column name="dense_2_output_shape_address0">27, 5, 3, 15</column>
+<column name="dense_2_output_shape_address1">15, 3, 3, 9</column>
+<column name="dense_2_output_shape_ce0">15, 3, 1, 3</column>
+<column name="dense_2_output_shape_d0">15, 3, 64, 192</column>
+<column name="dense_3_bias_array_3_address0">15, 3, 17, 51</column>
+<column name="dense_3_bias_array_3_ce0">15, 3, 1, 3</column>
+<column name="dense_3_kernel_array_2_address0">15, 3, 17, 51</column>
+<column name="dense_3_kernel_array_2_ce0">15, 3, 1, 3</column>
+<column name="dense_3_kernel_shape_address0">27, 5, 3, 15</column>
+<column name="dense_3_kernel_shape_address1">15, 3, 3, 9</column>
+<column name="dense_3_kernel_shape_ce0">15, 3, 1, 3</column>
+<column name="dense_3_kernel_shape_d0">21, 4, 64, 256</column>
+<column name="dense_bias_array_1_address0">15, 3, 17, 51</column>
+<column name="dense_bias_array_1_ce0">15, 3, 1, 3</column>
+<column name="dense_kernel_array_0_address0">15, 3, 17, 51</column>
+<column name="dense_kernel_array_0_ce0">15, 3, 1, 3</column>
+<column name="dense_kernel_shape_address0">27, 5, 3, 15</column>
+<column name="dense_kernel_shape_address1">15, 3, 3, 9</column>
+<column name="dense_kernel_shape_ce0">15, 3, 1, 3</column>
+<column name="dense_kernel_shape_d0">21, 4, 64, 256</column>
+<column name="dense_output_array_address0">21, 4, 17, 68</column>
+<column name="dense_output_array_ce0">21, 4, 1, 4</column>
+<column name="dense_output_array_d0">15, 3, 32, 96</column>
+<column name="dense_output_array_we0">15, 3, 1, 3</column>
+<column name="dense_output_shape_address0">27, 5, 3, 15</column>
+<column name="dense_output_shape_address1">15, 3, 3, 9</column>
+<column name="dense_output_shape_ce0">15, 3, 1, 3</column>
+<column name="dense_output_shape_d0">15, 3, 64, 192</column>
+<column name="z10_reg_678">9, 2, 17, 34</column>
+<column name="z1_reg_777">9, 2, 4, 8</column>
+<column name="z2_reg_766">9, 2, 8, 16</column>
+<column name="z3_reg_755">9, 2, 5, 10</column>
+<column name="z4_reg_744">9, 2, 11, 22</column>
+<column name="z5_reg_733">9, 2, 5, 10</column>
+<column name="z6_reg_722">9, 2, 6, 12</column>
+<column name="z7_reg_711">9, 2, 13, 26</column>
+<column name="z8_reg_700">9, 2, 6, 12</column>
+<column name="z9_reg_689">9, 2, 7, 14</column>
+<column name="z_reg_667">9, 2, 7, 14</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">41, 0, 41, 0</column>
+<column name="dense_1_bias_numel">3, 0, 64, 61</column>
+<column name="dense_1_kernel_ndim">1, 0, 64, 63</column>
+<column name="dense_1_kernel_numel">5, 0, 64, 59</column>
+<column name="dense_1_output_ndim">1, 0, 64, 63</column>
+<column name="dense_1_output_numel">3, 0, 64, 61</column>
+<column name="dense_2_bias_numel">3, 0, 64, 61</column>
+<column name="dense_2_kernel_ndim">1, 0, 64, 63</column>
+<column name="dense_2_kernel_numel">5, 0, 64, 59</column>
+<column name="dense_2_output_ndim">1, 0, 64, 63</column>
+<column name="dense_2_output_numel">3, 0, 64, 61</column>
+<column name="dense_3_bias_numel">2, 0, 64, 62</column>
+<column name="dense_3_kernel_ndim">1, 0, 64, 63</column>
+<column name="dense_3_kernel_numel">6, 0, 64, 58</column>
+<column name="dense_output_ndim">1, 0, 64, 63</column>
+<column name="dense_output_numel">3, 0, 64, 61</column>
+<column name="grp_k2c_dense_1_fu_788_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_k2c_dense_2_fu_837_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_k2c_dense_3_fu_813_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_k2c_dense_fu_861_ap_start_reg">1, 0, 1, 0</column>
+<column name="reg_895">3, 0, 64, 61</column>
+<column name="reg_901">3, 0, 64, 61</column>
+<column name="z10_1_reg_1265">17, 0, 17, 0</column>
+<column name="z10_cast_reg_1257">17, 0, 64, 47</column>
+<column name="z10_reg_678">17, 0, 17, 0</column>
+<column name="z1_1_reg_1407">4, 0, 4, 0</column>
+<column name="z1_cast1_reg_1399">4, 0, 64, 60</column>
+<column name="z1_reg_777">4, 0, 4, 0</column>
+<column name="z2_1_reg_1389">8, 0, 8, 0</column>
+<column name="z2_cast2_reg_1381">8, 0, 64, 56</column>
+<column name="z2_reg_766">8, 0, 8, 0</column>
+<column name="z3_1_reg_1371">5, 0, 5, 0</column>
+<column name="z3_cast3_reg_1363">5, 0, 64, 59</column>
+<column name="z3_reg_755">5, 0, 5, 0</column>
+<column name="z4_1_reg_1353">11, 0, 11, 0</column>
+<column name="z4_cast4_reg_1345">11, 0, 64, 53</column>
+<column name="z4_reg_744">11, 0, 11, 0</column>
+<column name="z5_reg_733">5, 0, 5, 0</column>
+<column name="z6_1_reg_1327">6, 0, 6, 0</column>
+<column name="z6_cast6_reg_1319">6, 0, 64, 58</column>
+<column name="z6_reg_722">6, 0, 6, 0</column>
+<column name="z7_1_reg_1309">13, 0, 13, 0</column>
+<column name="z7_cast7_reg_1301">13, 0, 64, 51</column>
+<column name="z7_reg_711">13, 0, 13, 0</column>
+<column name="z8_reg_700">6, 0, 6, 0</column>
+<column name="z9_1_reg_1283">7, 0, 7, 0</column>
+<column name="z9_cast9_reg_1275">7, 0, 64, 57</column>
+<column name="z9_reg_689">7, 0, 7, 0</column>
+<column name="z_reg_667">7, 0, 7, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, vlsiModel, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, vlsiModel, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, vlsiModel, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, vlsiModel, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, vlsiModel, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, vlsiModel, return value</column>
+<column name="dense_input_input_array_address0">out, 17, ap_memory, dense_input_input_array, array</column>
+<column name="dense_input_input_array_ce0">out, 1, ap_memory, dense_input_input_array, array</column>
+<column name="dense_input_input_array_q0">in, 32, ap_memory, dense_input_input_array, array</column>
+<column name="dense_input_input_ndim">in, 64, ap_none, dense_input_input_ndim, pointer</column>
+<column name="dense_input_input_numel">in, 64, ap_none, dense_input_input_numel, pointer</column>
+<column name="dense_input_input_shape_address0">out, 3, ap_memory, dense_input_input_shape, array</column>
+<column name="dense_input_input_shape_ce0">out, 1, ap_memory, dense_input_input_shape, array</column>
+<column name="dense_input_input_shape_q0">in, 64, ap_memory, dense_input_input_shape, array</column>
+<column name="dense_3_output_array_address0">out, 17, ap_memory, dense_3_output_array, array</column>
+<column name="dense_3_output_array_ce0">out, 1, ap_memory, dense_3_output_array, array</column>
+<column name="dense_3_output_array_we0">out, 1, ap_memory, dense_3_output_array, array</column>
+<column name="dense_3_output_array_d0">out, 32, ap_memory, dense_3_output_array, array</column>
+<column name="dense_3_output_array_q0">in, 32, ap_memory, dense_3_output_array, array</column>
+<column name="dense_3_output_ndim">in, 64, ap_none, dense_3_output_ndim, pointer</column>
+<column name="dense_3_output_numel">in, 64, ap_none, dense_3_output_numel, pointer</column>
+<column name="dense_3_output_shape_address0">out, 3, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_ce0">out, 1, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_we0">out, 1, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_d0">out, 64, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_q0">in, 64, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_address1">out, 3, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_ce1">out, 1, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_we1">out, 1, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_d1">out, 64, ap_memory, dense_3_output_shape, array</column>
+<column name="dense_3_output_shape_q1">in, 64, ap_memory, dense_3_output_shape, array</column>
+</table>
+</item>
+</section>
+</profile>
