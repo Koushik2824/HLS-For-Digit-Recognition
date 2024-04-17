@@ -38,122 +38,160 @@
     "CSource": ["..\/..\/vlsiModel.c"],
     "Vhdl": [
       "impl\/vhdl\/k2c_affine_matmul.vhd",
+      "impl\/vhdl\/k2c_affine_matmul_1.vhd",
+      "impl\/vhdl\/k2c_affine_matmul_2.vhd",
+      "impl\/vhdl\/k2c_affine_matmul_3.vhd",
       "impl\/vhdl\/k2c_dense.vhd",
       "impl\/vhdl\/k2c_dense_1.vhd",
+      "impl\/vhdl\/k2c_dense_1_denseJfO.vhd",
+      "impl\/vhdl\/k2c_dense_1_denseKfY.vhd",
       "impl\/vhdl\/k2c_dense_2.vhd",
+      "impl\/vhdl\/k2c_dense_2_denseAem.vhd",
+      "impl\/vhdl\/k2c_dense_2_densezec.vhd",
       "impl\/vhdl\/k2c_dense_3.vhd",
+      "impl\/vhdl\/k2c_dense_3_densetde.vhd",
+      "impl\/vhdl\/k2c_dense_3_denseudo.vhd",
+      "impl\/vhdl\/k2c_dense_dense_bocq.vhd",
+      "impl\/vhdl\/k2c_dense_dense_kncg.vhd",
       "impl\/vhdl\/k2c_dot.vhd",
       "impl\/vhdl\/k2c_dot_1.vhd",
-      "impl\/vhdl\/k2c_dot_1_dense_2qcK.vhd",
+      "impl\/vhdl\/k2c_dot_1_dense_2xdS.vhd",
+      "impl\/vhdl\/k2c_dot_1_dense_2yd2.vhd",
       "impl\/vhdl\/k2c_dot_2.vhd",
-      "impl\/vhdl\/k2c_dot_2_dense_3tde.vhd",
+      "impl\/vhdl\/k2c_dot_2_dense_3DeQ.vhd",
+      "impl\/vhdl\/k2c_dot_2_dense_3Ee0.vhd",
       "impl\/vhdl\/k2c_dot_3.vhd",
       "impl\/vhdl\/k2c_dot_3_dense_fg8j.vhd",
+      "impl\/vhdl\/k2c_dot_3_dense_khbi.vhd",
       "impl\/vhdl\/k2c_dot_3_permA.vhd",
       "impl\/vhdl\/k2c_dot_3_permB.vhd",
-      "impl\/vhdl\/k2c_dot_dense_1_fncg.vhd",
+      "impl\/vhdl\/k2c_dot_dense_1_frcU.vhd",
+      "impl\/vhdl\/k2c_dot_dense_1_ksc4.vhd",
       "impl\/vhdl\/k2c_matmul.vhd",
       "impl\/vhdl\/k2c_matmul_1.vhd",
       "impl\/vhdl\/k2c_matmul_2.vhd",
       "impl\/vhdl\/k2c_matmul_3.vhd",
       "impl\/vhdl\/k2c_relu_func.vhd",
-      "impl\/vhdl\/k2c_softmax_func.vhd",
+      "impl\/vhdl\/k2c_relu_func_1.vhd",
+      "impl\/vhdl\/k2c_relu_func_3.vhd",
+      "impl\/vhdl\/k2c_softmax_func_2.vhd",
       "impl\/vhdl\/k2c_sub2idx.vhd",
-      "impl\/vhdl\/vlsiModel_dense_1DeQ.vhd",
-      "impl\/vhdl\/vlsiModel_dense_1Ffa.vhd",
-      "impl\/vhdl\/vlsiModel_dense_2IfE.vhd",
-      "impl\/vhdl\/vlsiModel_dense_2KfY.vhd",
-      "impl\/vhdl\/vlsiModel_dense_3Mgi.vhd",
-      "impl\/vhdl\/vlsiModel_dense_3OgC.vhd",
-      "impl\/vhdl\/vlsiModel_dense_bAem.vhd",
-      "impl\/vhdl\/vlsiModel_dense_kQgW.vhd",
-      "impl\/vhdl\/vlsiModel_dense_kyd2.vhd",
-      "impl\/vhdl\/vlsiModel_dense_oxdS.vhd",
+      "impl\/vhdl\/vlsiModel_dense_1PgM.vhd",
+      "impl\/vhdl\/vlsiModel_dense_2Shg.vhd",
+      "impl\/vhdl\/vlsiModel_dense_3Xh4.vhd",
+      "impl\/vhdl\/vlsiModel_dense_iLf8.vhd",
+      "impl\/vhdl\/vlsiModel_dense_iNgs.vhd",
+      "impl\/vhdl\/vlsiModel_dense_oMgi.vhd",
       "impl\/vhdl\/vlsiModel_fadd_32cud.vhd",
-      "impl\/vhdl\/vlsiModel_faddfsuudo.vhd",
-      "impl\/vhdl\/vlsiModel_fcmp_32kbM.vhd",
-      "impl\/vhdl\/vlsiModel_fdiv_32vdy.vhd",
-      "impl\/vhdl\/vlsiModel_fexp_32wdI.vhd",
+      "impl\/vhdl\/vlsiModel_faddfsuFfa.vhd",
+      "impl\/vhdl\/vlsiModel_fcmp_32lbW.vhd",
+      "impl\/vhdl\/vlsiModel_fdiv_32Gfk.vhd",
+      "impl\/vhdl\/vlsiModel_fexp_32Hfu.vhd",
       "impl\/vhdl\/vlsiModel_fmul_32dEe.vhd",
+      "impl\/vhdl\/vlsiModel_mac_mulCeG.vhd",
       "impl\/vhdl\/vlsiModel_mac_mulfYi.vhd",
-      "impl\/vhdl\/vlsiModel_mac_mulmb6.vhd",
-      "impl\/vhdl\/vlsiModel_mac_mulpcA.vhd",
-      "impl\/vhdl\/vlsiModel_mac_mulsc4.vhd",
+      "impl\/vhdl\/vlsiModel_mac_mulIfE.vhd",
+      "impl\/vhdl\/vlsiModel_mac_mulqcK.vhd",
+      "impl\/vhdl\/vlsiModel_mac_mulwdI.vhd",
       "impl\/vhdl\/vlsiModel_mul_64sbkb.vhd",
+      "impl\/vhdl\/vlsiModel_mul_mulBew.vhd",
       "impl\/vhdl\/vlsiModel_mul_muleOg.vhd",
-      "impl\/vhdl\/vlsiModel_mul_mullbW.vhd",
-      "impl\/vhdl\/vlsiModel_mul_mulocq.vhd",
-      "impl\/vhdl\/vlsiModel_mul_mulrcU.vhd",
-      "impl\/vhdl\/vlsiModel_udiv_20ibs.vhd",
-      "impl\/vhdl\/vlsiModel_udiv_64hbi.vhd",
-      "impl\/vhdl\/vlsiModel_urem_64jbC.vhd",
+      "impl\/vhdl\/vlsiModel_mul_mulmb6.vhd",
+      "impl\/vhdl\/vlsiModel_mul_mulpcA.vhd",
+      "impl\/vhdl\/vlsiModel_mul_mulvdy.vhd",
+      "impl\/vhdl\/vlsiModel_udiv_20jbC.vhd",
+      "impl\/vhdl\/vlsiModel_udiv_64ibs.vhd",
+      "impl\/vhdl\/vlsiModel_urem_64kbM.vhd",
       "impl\/vhdl\/vlsiModel.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/k2c_affine_matmul.v",
+      "impl\/verilog\/k2c_affine_matmul_1.v",
+      "impl\/verilog\/k2c_affine_matmul_2.v",
+      "impl\/verilog\/k2c_affine_matmul_3.v",
       "impl\/verilog\/k2c_dense.v",
       "impl\/verilog\/k2c_dense_1.v",
+      "impl\/verilog\/k2c_dense_1_denseJfO.v",
+      "impl\/verilog\/k2c_dense_1_denseJfO_rom.dat",
+      "impl\/verilog\/k2c_dense_1_denseKfY.v",
+      "impl\/verilog\/k2c_dense_1_denseKfY_rom.dat",
       "impl\/verilog\/k2c_dense_2.v",
+      "impl\/verilog\/k2c_dense_2_denseAem.v",
+      "impl\/verilog\/k2c_dense_2_denseAem_rom.dat",
+      "impl\/verilog\/k2c_dense_2_densezec.v",
+      "impl\/verilog\/k2c_dense_2_densezec_rom.dat",
       "impl\/verilog\/k2c_dense_3.v",
+      "impl\/verilog\/k2c_dense_3_densetde.v",
+      "impl\/verilog\/k2c_dense_3_densetde_rom.dat",
+      "impl\/verilog\/k2c_dense_3_denseudo.v",
+      "impl\/verilog\/k2c_dense_3_denseudo_rom.dat",
+      "impl\/verilog\/k2c_dense_dense_bocq.v",
+      "impl\/verilog\/k2c_dense_dense_bocq_rom.dat",
+      "impl\/verilog\/k2c_dense_dense_kncg.v",
+      "impl\/verilog\/k2c_dense_dense_kncg_rom.dat",
       "impl\/verilog\/k2c_dot.v",
       "impl\/verilog\/k2c_dot_1.v",
-      "impl\/verilog\/k2c_dot_1_dense_2qcK.v",
-      "impl\/verilog\/k2c_dot_1_dense_2qcK_ram.dat",
+      "impl\/verilog\/k2c_dot_1_dense_2xdS.v",
+      "impl\/verilog\/k2c_dot_1_dense_2xdS_ram.dat",
+      "impl\/verilog\/k2c_dot_1_dense_2yd2.v",
+      "impl\/verilog\/k2c_dot_1_dense_2yd2_rom.dat",
       "impl\/verilog\/k2c_dot_2.v",
-      "impl\/verilog\/k2c_dot_2_dense_3tde.v",
-      "impl\/verilog\/k2c_dot_2_dense_3tde_ram.dat",
+      "impl\/verilog\/k2c_dot_2_dense_3DeQ.v",
+      "impl\/verilog\/k2c_dot_2_dense_3DeQ_ram.dat",
+      "impl\/verilog\/k2c_dot_2_dense_3Ee0.v",
+      "impl\/verilog\/k2c_dot_2_dense_3Ee0_rom.dat",
       "impl\/verilog\/k2c_dot_3.v",
       "impl\/verilog\/k2c_dot_3_dense_fg8j.v",
       "impl\/verilog\/k2c_dot_3_dense_fg8j_ram.dat",
+      "impl\/verilog\/k2c_dot_3_dense_khbi.v",
+      "impl\/verilog\/k2c_dot_3_dense_khbi_rom.dat",
       "impl\/verilog\/k2c_dot_3_permA.v",
       "impl\/verilog\/k2c_dot_3_permB.v",
-      "impl\/verilog\/k2c_dot_dense_1_fncg.v",
-      "impl\/verilog\/k2c_dot_dense_1_fncg_ram.dat",
+      "impl\/verilog\/k2c_dot_dense_1_frcU.v",
+      "impl\/verilog\/k2c_dot_dense_1_frcU_ram.dat",
+      "impl\/verilog\/k2c_dot_dense_1_ksc4.v",
+      "impl\/verilog\/k2c_dot_dense_1_ksc4_rom.dat",
       "impl\/verilog\/k2c_matmul.v",
       "impl\/verilog\/k2c_matmul_1.v",
       "impl\/verilog\/k2c_matmul_2.v",
       "impl\/verilog\/k2c_matmul_3.v",
       "impl\/verilog\/k2c_relu_func.v",
-      "impl\/verilog\/k2c_softmax_func.v",
+      "impl\/verilog\/k2c_relu_func_1.v",
+      "impl\/verilog\/k2c_relu_func_3.v",
+      "impl\/verilog\/k2c_softmax_func_2.v",
       "impl\/verilog\/k2c_sub2idx.v",
-      "impl\/verilog\/vlsiModel_dense_1DeQ.v",
-      "impl\/verilog\/vlsiModel_dense_1DeQ_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_1Ffa.v",
-      "impl\/verilog\/vlsiModel_dense_1Ffa_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_2IfE.v",
-      "impl\/verilog\/vlsiModel_dense_2IfE_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_2KfY.v",
-      "impl\/verilog\/vlsiModel_dense_2KfY_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_3Mgi.v",
-      "impl\/verilog\/vlsiModel_dense_3Mgi_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_3OgC.v",
-      "impl\/verilog\/vlsiModel_dense_3OgC_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_bAem.v",
-      "impl\/verilog\/vlsiModel_dense_bAem_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_kQgW.v",
-      "impl\/verilog\/vlsiModel_dense_kQgW_ram.dat",
-      "impl\/verilog\/vlsiModel_dense_kyd2.v",
-      "impl\/verilog\/vlsiModel_dense_kyd2_rom.dat",
-      "impl\/verilog\/vlsiModel_dense_oxdS.v",
-      "impl\/verilog\/vlsiModel_dense_oxdS_ram.dat",
+      "impl\/verilog\/vlsiModel_dense_1PgM.v",
+      "impl\/verilog\/vlsiModel_dense_1PgM_ram.dat",
+      "impl\/verilog\/vlsiModel_dense_2Shg.v",
+      "impl\/verilog\/vlsiModel_dense_2Shg_ram.dat",
+      "impl\/verilog\/vlsiModel_dense_3Xh4.v",
+      "impl\/verilog\/vlsiModel_dense_3Xh4_ram.dat",
+      "impl\/verilog\/vlsiModel_dense_iLf8.v",
+      "impl\/verilog\/vlsiModel_dense_iLf8_ram.dat",
+      "impl\/verilog\/vlsiModel_dense_iNgs.v",
+      "impl\/verilog\/vlsiModel_dense_iNgs_ram.dat",
+      "impl\/verilog\/vlsiModel_dense_oMgi.v",
+      "impl\/verilog\/vlsiModel_dense_oMgi_ram.dat",
       "impl\/verilog\/vlsiModel_fadd_32cud.v",
-      "impl\/verilog\/vlsiModel_faddfsuudo.v",
-      "impl\/verilog\/vlsiModel_fcmp_32kbM.v",
-      "impl\/verilog\/vlsiModel_fdiv_32vdy.v",
-      "impl\/verilog\/vlsiModel_fexp_32wdI.v",
+      "impl\/verilog\/vlsiModel_faddfsuFfa.v",
+      "impl\/verilog\/vlsiModel_fcmp_32lbW.v",
+      "impl\/verilog\/vlsiModel_fdiv_32Gfk.v",
+      "impl\/verilog\/vlsiModel_fexp_32Hfu.v",
       "impl\/verilog\/vlsiModel_fmul_32dEe.v",
+      "impl\/verilog\/vlsiModel_mac_mulCeG.v",
       "impl\/verilog\/vlsiModel_mac_mulfYi.v",
-      "impl\/verilog\/vlsiModel_mac_mulmb6.v",
-      "impl\/verilog\/vlsiModel_mac_mulpcA.v",
-      "impl\/verilog\/vlsiModel_mac_mulsc4.v",
+      "impl\/verilog\/vlsiModel_mac_mulIfE.v",
+      "impl\/verilog\/vlsiModel_mac_mulqcK.v",
+      "impl\/verilog\/vlsiModel_mac_mulwdI.v",
       "impl\/verilog\/vlsiModel_mul_64sbkb.v",
+      "impl\/verilog\/vlsiModel_mul_mulBew.v",
       "impl\/verilog\/vlsiModel_mul_muleOg.v",
-      "impl\/verilog\/vlsiModel_mul_mullbW.v",
-      "impl\/verilog\/vlsiModel_mul_mulocq.v",
-      "impl\/verilog\/vlsiModel_mul_mulrcU.v",
-      "impl\/verilog\/vlsiModel_udiv_20ibs.v",
-      "impl\/verilog\/vlsiModel_udiv_64hbi.v",
-      "impl\/verilog\/vlsiModel_urem_64jbC.v",
+      "impl\/verilog\/vlsiModel_mul_mulmb6.v",
+      "impl\/verilog\/vlsiModel_mul_mulpcA.v",
+      "impl\/verilog\/vlsiModel_mul_mulvdy.v",
+      "impl\/verilog\/vlsiModel_udiv_20jbC.v",
+      "impl\/verilog\/vlsiModel_udiv_64ibs.v",
+      "impl\/verilog\/vlsiModel_urem_64kbM.v",
       "impl\/verilog\/vlsiModel.v"
     ],
     "Misc": ["impl\/misc\/logo.png"],
@@ -226,24 +264,15 @@
     "dense_3_output_array_address0": {
       "type": "data",
       "dir": "out",
-      "width": "17",
+      "width": "10",
       "ctype": {"DATA": {
           "Type": "null",
-          "Width": "17"
+          "Width": "10"
         }}
     },
     "dense_3_output_array_d0": {
       "type": "data",
       "dir": "out",
-      "width": "32",
-      "ctype": {"DATA": {
-          "Type": "real float",
-          "Width": "32"
-        }}
-    },
-    "dense_3_output_array_q0": {
-      "type": "data",
-      "dir": "in",
       "width": "32",
       "ctype": {"DATA": {
           "Type": "real float",
@@ -325,10 +354,10 @@
     "dense_input_input_array_address0": {
       "type": "data",
       "dir": "out",
-      "width": "17",
+      "width": "10",
       "ctype": {"DATA": {
           "Type": "null",
-          "Width": "17"
+          "Width": "10"
         }}
     },
     "dense_input_input_array_q0": {
@@ -367,7 +396,25 @@
           "Width": "3"
         }}
     },
+    "dense_input_input_shape_address1": {
+      "type": "data",
+      "dir": "out",
+      "width": "3",
+      "ctype": {"DATA": {
+          "Type": "null",
+          "Width": "3"
+        }}
+    },
     "dense_input_input_shape_q0": {
+      "type": "data",
+      "dir": "in",
+      "width": "64",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "64"
+        }}
+    },
+    "dense_input_input_shape_q1": {
       "type": "data",
       "dir": "in",
       "width": "64",
@@ -404,7 +451,7 @@
     },
     "dense_input_input_array_address0": {
       "dir": "out",
-      "width": "17"
+      "width": "10"
     },
     "dense_input_input_array_ce0": {
       "dir": "out",
@@ -434,9 +481,21 @@
       "dir": "in",
       "width": "64"
     },
+    "dense_input_input_shape_address1": {
+      "dir": "out",
+      "width": "3"
+    },
+    "dense_input_input_shape_ce1": {
+      "dir": "out",
+      "width": "1"
+    },
+    "dense_input_input_shape_q1": {
+      "dir": "in",
+      "width": "64"
+    },
     "dense_3_output_array_address0": {
       "dir": "out",
-      "width": "17"
+      "width": "10"
     },
     "dense_3_output_array_ce0": {
       "dir": "out",
@@ -448,10 +507,6 @@
     },
     "dense_3_output_array_d0": {
       "dir": "out",
-      "width": "32"
-    },
-    "dense_3_output_array_q0": {
-      "dir": "in",
       "width": "32"
     },
     "dense_3_output_ndim": {
@@ -513,7 +568,7 @@
       "dir": "in",
       "dataWidth": "32",
       "busTypeRef": "ap_memory",
-      "arraySize": "80000",
+      "arraySize": "784",
       "handshakeRef": "ap_none"
     },
     "dense_input_input_ndim": {
@@ -536,20 +591,20 @@
       "arraySize": "5",
       "handshakeRef": "ap_none"
     },
+    "dense_input_input_shape_q1": {
+      "interfaceRef": "dense_input_input_shape_q1",
+      "dir": "in",
+      "dataWidth": "64",
+      "busTypeRef": "ap_memory",
+      "arraySize": "5",
+      "handshakeRef": "ap_none"
+    },
     "dense_3_output_array_d0": {
       "interfaceRef": "dense_3_output_array_d0",
       "dir": "out",
       "dataWidth": "32",
       "busTypeRef": "ap_memory",
-      "arraySize": "80000",
-      "handshakeRef": "ap_none"
-    },
-    "dense_3_output_array_q0": {
-      "interfaceRef": "dense_3_output_array_q0",
-      "dir": "in",
-      "dataWidth": "32",
-      "busTypeRef": "ap_memory",
-      "arraySize": "80000",
+      "arraySize": "784",
       "handshakeRef": "ap_none"
     },
     "dense_3_output_ndim": {
@@ -603,15 +658,15 @@
       "Instances": [
         {
           "ModuleName": "k2c_dense_1",
-          "InstanceName": "grp_k2c_dense_1_fu_788",
+          "InstanceName": "grp_k2c_dense_1_fu_515",
           "Instances": [
             {
               "ModuleName": "k2c_dot_2",
-              "InstanceName": "grp_k2c_dot_2_fu_173",
+              "InstanceName": "grp_k2c_dot_2_fu_166",
               "Instances": [
                 {
-                  "ModuleName": "k2c_matmul_2",
-                  "InstanceName": "grp_k2c_matmul_2_fu_595"
+                  "ModuleName": "k2c_matmul_1",
+                  "InstanceName": "grp_k2c_matmul_1_fu_595"
                 },
                 {
                   "ModuleName": "k2c_sub2idx",
@@ -620,26 +675,26 @@
               ]
             },
             {
-              "ModuleName": "k2c_softmax_func",
-              "InstanceName": "grp_k2c_softmax_func_fu_198"
+              "ModuleName": "k2c_softmax_func_2",
+              "InstanceName": "grp_k2c_softmax_func_2_fu_191"
             },
             {
-              "ModuleName": "k2c_affine_matmul",
-              "InstanceName": "grp_k2c_affine_matmul_fu_205"
+              "ModuleName": "k2c_affine_matmul_2",
+              "InstanceName": "grp_k2c_affine_matmul_2_fu_198"
             }
           ]
         },
         {
           "ModuleName": "k2c_dense_3",
-          "InstanceName": "grp_k2c_dense_3_fu_813",
+          "InstanceName": "grp_k2c_dense_3_fu_540",
           "Instances": [
             {
               "ModuleName": "k2c_dot",
               "InstanceName": "grp_k2c_dot_fu_173",
               "Instances": [
                 {
-                  "ModuleName": "k2c_matmul",
-                  "InstanceName": "grp_k2c_matmul_fu_595"
+                  "ModuleName": "k2c_matmul_3",
+                  "InstanceName": "grp_k2c_matmul_3_fu_595"
                 },
                 {
                   "ModuleName": "k2c_sub2idx",
@@ -659,15 +714,15 @@
         },
         {
           "ModuleName": "k2c_dense_2",
-          "InstanceName": "grp_k2c_dense_2_fu_837",
+          "InstanceName": "grp_k2c_dense_2_fu_564",
           "Instances": [
             {
               "ModuleName": "k2c_dot_1",
-              "InstanceName": "grp_k2c_dot_1_fu_173",
+              "InstanceName": "grp_k2c_dot_1_fu_172",
               "Instances": [
                 {
-                  "ModuleName": "k2c_matmul_1",
-                  "InstanceName": "grp_k2c_matmul_1_fu_595"
+                  "ModuleName": "k2c_matmul_2",
+                  "InstanceName": "grp_k2c_matmul_2_fu_595"
                 },
                 {
                   "ModuleName": "k2c_sub2idx",
@@ -676,26 +731,26 @@
               ]
             },
             {
-              "ModuleName": "k2c_affine_matmul",
-              "InstanceName": "grp_k2c_affine_matmul_fu_198"
+              "ModuleName": "k2c_affine_matmul_1",
+              "InstanceName": "grp_k2c_affine_matmul_1_fu_197"
             },
             {
-              "ModuleName": "k2c_relu_func",
-              "InstanceName": "grp_k2c_relu_func_fu_214"
+              "ModuleName": "k2c_relu_func_1",
+              "InstanceName": "grp_k2c_relu_func_1_fu_213"
             }
           ]
         },
         {
           "ModuleName": "k2c_dense",
-          "InstanceName": "grp_k2c_dense_fu_861",
+          "InstanceName": "grp_k2c_dense_fu_588",
           "Instances": [
             {
               "ModuleName": "k2c_dot_3",
               "InstanceName": "grp_k2c_dot_3_fu_154",
               "Instances": [
                 {
-                  "ModuleName": "k2c_matmul_3",
-                  "InstanceName": "grp_k2c_matmul_3_fu_601"
+                  "ModuleName": "k2c_matmul",
+                  "InstanceName": "grp_k2c_matmul_fu_601"
                 },
                 {
                   "ModuleName": "k2c_sub2idx",
@@ -704,12 +759,12 @@
               ]
             },
             {
-              "ModuleName": "k2c_affine_matmul",
-              "InstanceName": "grp_k2c_affine_matmul_fu_175"
+              "ModuleName": "k2c_affine_matmul_3",
+              "InstanceName": "grp_k2c_affine_matmul_3_fu_175"
             },
             {
-              "ModuleName": "k2c_relu_func",
-              "InstanceName": "grp_k2c_relu_func_fu_191"
+              "ModuleName": "k2c_relu_func_3",
+              "InstanceName": "grp_k2c_relu_func_3_fu_191"
             }
           ]
         }
@@ -751,7 +806,7 @@
           "BRAM_18K": "0"
         }
       },
-      "k2c_matmul_3": {
+      "k2c_matmul": {
         "Latency": {
           "LatencyBest": "",
           "LatencyAvg": "",
@@ -796,9 +851,9 @@
           }
         ],
         "Area": {
-          "DSP48E": "24",
-          "FF": "1477",
-          "LUT": "1106",
+          "DSP48E": "23",
+          "FF": "1455",
+          "LUT": "1128",
           "BRAM_18K": "0"
         }
       },
@@ -914,13 +969,13 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "256",
-          "DSP48E": "40",
-          "FF": "8917",
-          "LUT": "6835"
+          "BRAM_18K": "512",
+          "DSP48E": "39",
+          "FF": "8895",
+          "LUT": "6857"
         }
       },
-      "k2c_relu_func": {
+      "k2c_relu_func_3": {
         "Latency": {
           "LatencyBest": "",
           "LatencyAvg": "",
@@ -943,12 +998,12 @@
           }],
         "Area": {
           "DSP48E": "0",
-          "FF": "218",
+          "FF": "208",
           "LUT": "251",
           "BRAM_18K": "0"
         }
       },
-      "k2c_affine_matmul": {
+      "k2c_affine_matmul_3": {
         "Latency": {
           "LatencyBest": "",
           "LatencyAvg": "",
@@ -993,9 +1048,9 @@
           }
         ],
         "Area": {
-          "DSP48E": "24",
-          "FF": "1481",
-          "LUT": "1124",
+          "DSP48E": "23",
+          "FF": "1445",
+          "LUT": "1139",
           "BRAM_18K": "0"
         }
       },
@@ -1028,13 +1083,13 @@
               }]
           }],
         "Area": {
-          "BRAM_18K": "256",
-          "DSP48E": "82",
-          "FF": "11655",
-          "LUT": "9262"
+          "BRAM_18K": "769",
+          "DSP48E": "80",
+          "FF": "11586",
+          "LUT": "9293"
         }
       },
-      "k2c_matmul": {
+      "k2c_matmul_3": {
         "Latency": {
           "LatencyBest": "",
           "LatencyAvg": "",
@@ -1079,9 +1134,9 @@
           }
         ],
         "Area": {
-          "DSP48E": "24",
-          "FF": "1471",
-          "LUT": "1098",
+          "DSP48E": "23",
+          "FF": "1427",
+          "LUT": "1112",
           "BRAM_18K": "0"
         }
       },
@@ -1197,10 +1252,89 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "16",
-          "DSP48E": "40",
-          "FF": "9521",
-          "LUT": "7155"
+          "BRAM_18K": "32",
+          "DSP48E": "39",
+          "FF": "9477",
+          "LUT": "7169"
+        }
+      },
+      "k2c_relu_func": {
+        "Latency": {
+          "LatencyBest": "",
+          "LatencyAvg": "",
+          "LatencyWorst": "",
+          "PipelineII": "",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.081"
+        },
+        "Loops": [{
+            "Name": "Loop 1",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "3"
+          }],
+        "Area": {
+          "DSP48E": "0",
+          "FF": "207",
+          "LUT": "251",
+          "BRAM_18K": "0"
+        }
+      },
+      "k2c_affine_matmul": {
+        "Latency": {
+          "LatencyBest": "",
+          "LatencyAvg": "",
+          "LatencyWorst": "",
+          "PipelineII": "",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.122"
+        },
+        "Loops": [
+          {
+            "Name": "Loop 1",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "1"
+          },
+          {
+            "Name": "Loop 2",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "",
+            "Loops": [{
+                "Name": "Loop 2.1",
+                "TripCount": "",
+                "Latency": "",
+                "PipelineII": "",
+                "PipelineDepth": "",
+                "Loops": [{
+                    "Name": "Loop 2.1.1",
+                    "TripCount": "",
+                    "Latency": "",
+                    "PipelineII": "",
+                    "PipelineDepth": "11"
+                  }]
+              }]
+          }
+        ],
+        "Area": {
+          "DSP48E": "22",
+          "FF": "1427",
+          "LUT": "1169",
+          "BRAM_18K": "0"
         }
       },
       "k2c_dense_3": {
@@ -1232,13 +1366,13 @@
               }]
           }],
         "Area": {
-          "BRAM_18K": "16",
-          "DSP48E": "82",
-          "FF": "12433",
-          "LUT": "9740"
+          "BRAM_18K": "49",
+          "DSP48E": "79",
+          "FF": "12313",
+          "LUT": "9783"
         }
       },
-      "k2c_matmul_1": {
+      "k2c_matmul_2": {
         "Latency": {
           "LatencyBest": "",
           "LatencyAvg": "",
@@ -1277,15 +1411,15 @@
                     "TripCount": "",
                     "Latency": "",
                     "PipelineII": "",
-                    "PipelineDepth": "11"
+                    "PipelineDepth": "10"
                   }]
               }]
           }
         ],
         "Area": {
-          "DSP48E": "24",
-          "FF": "1459",
-          "LUT": "1094",
+          "DSP48E": "23",
+          "FF": "1346",
+          "LUT": "1080",
           "BRAM_18K": "0"
         }
       },
@@ -1401,10 +1535,89 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "4",
-          "DSP48E": "40",
-          "FF": "9507",
-          "LUT": "7149"
+          "BRAM_18K": "8",
+          "DSP48E": "39",
+          "FF": "9394",
+          "LUT": "7135"
+        }
+      },
+      "k2c_relu_func_1": {
+        "Latency": {
+          "LatencyBest": "",
+          "LatencyAvg": "",
+          "LatencyWorst": "",
+          "PipelineII": "",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "7.864"
+        },
+        "Loops": [{
+            "Name": "Loop 1",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "2"
+          }],
+        "Area": {
+          "DSP48E": "0",
+          "FF": "202",
+          "LUT": "245",
+          "BRAM_18K": "0"
+        }
+      },
+      "k2c_affine_matmul_1": {
+        "Latency": {
+          "LatencyBest": "",
+          "LatencyAvg": "",
+          "LatencyWorst": "",
+          "PipelineII": "",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.122"
+        },
+        "Loops": [
+          {
+            "Name": "Loop 1",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "1"
+          },
+          {
+            "Name": "Loop 2",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "",
+            "Loops": [{
+                "Name": "Loop 2.1",
+                "TripCount": "",
+                "Latency": "",
+                "PipelineII": "",
+                "PipelineDepth": "",
+                "Loops": [{
+                    "Name": "Loop 2.1.1",
+                    "TripCount": "",
+                    "Latency": "",
+                    "PipelineII": "",
+                    "PipelineDepth": "10"
+                  }]
+              }]
+          }
+        ],
+        "Area": {
+          "DSP48E": "22",
+          "FF": "1318",
+          "LUT": "1141",
+          "BRAM_18K": "0"
         }
       },
       "k2c_dense_2": {
@@ -1432,17 +1645,17 @@
                 "TripCount": "",
                 "Latency": "",
                 "PipelineII": "",
-                "PipelineDepth": "8"
+                "PipelineDepth": "7"
               }]
           }],
         "Area": {
-          "BRAM_18K": "4",
-          "DSP48E": "82",
-          "FF": "12419",
-          "LUT": "9734"
+          "BRAM_18K": "12",
+          "DSP48E": "79",
+          "FF": "12114",
+          "LUT": "9718"
         }
       },
-      "k2c_matmul_2": {
+      "k2c_matmul_1": {
         "Latency": {
           "LatencyBest": "",
           "LatencyAvg": "",
@@ -1481,15 +1694,15 @@
                     "TripCount": "",
                     "Latency": "",
                     "PipelineII": "",
-                    "PipelineDepth": "11"
+                    "PipelineDepth": "10"
                   }]
               }]
           }
         ],
         "Area": {
-          "DSP48E": "24",
-          "FF": "1447",
-          "LUT": "1090",
+          "DSP48E": "23",
+          "FF": "1330",
+          "LUT": "1066",
           "BRAM_18K": "0"
         }
       },
@@ -1605,13 +1818,13 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "2",
-          "DSP48E": "40",
-          "FF": "9493",
-          "LUT": "7143"
+          "BRAM_18K": "3",
+          "DSP48E": "39",
+          "FF": "9376",
+          "LUT": "7119"
         }
       },
-      "k2c_softmax_func": {
+      "k2c_softmax_func_2": {
         "Latency": {
           "LatencyBest": "",
           "LatencyAvg": "",
@@ -1623,7 +1836,7 @@
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "1.25",
-          "Estimate": "8.543"
+          "Estimate": "8.636"
         },
         "Loops": [
           {
@@ -1631,21 +1844,21 @@
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
-            "PipelineDepth": "3"
+            "PipelineDepth": "2"
           },
           {
             "Name": "Loop 2",
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
-            "PipelineDepth": "16"
+            "PipelineDepth": "15"
           },
           {
             "Name": "Loop 3",
             "TripCount": "",
             "Latency": "",
             "PipelineII": "",
-            "PipelineDepth": "7"
+            "PipelineDepth": "6"
           },
           {
             "Name": "Loop 4",
@@ -1657,8 +1870,59 @@
         ],
         "Area": {
           "DSP48E": "12",
-          "FF": "1852",
-          "LUT": "2814",
+          "FF": "1713",
+          "LUT": "2769",
+          "BRAM_18K": "0"
+        }
+      },
+      "k2c_affine_matmul_2": {
+        "Latency": {
+          "LatencyBest": "",
+          "LatencyAvg": "",
+          "LatencyWorst": "",
+          "PipelineII": "",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.122"
+        },
+        "Loops": [
+          {
+            "Name": "Loop 1",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "1"
+          },
+          {
+            "Name": "Loop 2",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "",
+            "PipelineDepth": "",
+            "Loops": [{
+                "Name": "Loop 2.1",
+                "TripCount": "",
+                "Latency": "",
+                "PipelineII": "",
+                "PipelineDepth": "",
+                "Loops": [{
+                    "Name": "Loop 2.1.1",
+                    "TripCount": "",
+                    "Latency": "",
+                    "PipelineII": "",
+                    "PipelineDepth": "10"
+                  }]
+              }]
+          }
+        ],
+        "Area": {
+          "DSP48E": "22",
+          "FF": "1306",
+          "LUT": "1123",
           "BRAM_18K": "0"
         }
       },
@@ -1687,14 +1951,14 @@
                 "TripCount": "",
                 "Latency": "",
                 "PipelineII": "",
-                "PipelineDepth": "8"
+                "PipelineDepth": "7"
               }]
           }],
         "Area": {
-          "BRAM_18K": "2",
-          "DSP48E": "94",
-          "FF": "14039",
-          "LUT": "12291"
+          "BRAM_18K": "4",
+          "DSP48E": "91",
+          "FF": "13594",
+          "LUT": "12200"
         }
       },
       "vlsiModel": {
@@ -1714,76 +1978,13 @@
         "Loops": [
           {
             "Name": "Loop 1",
-            "TripCount": "100",
-            "Latency": "100",
+            "TripCount": "784",
+            "Latency": "1568",
             "PipelineII": "",
-            "PipelineDepth": "1"
+            "PipelineDepth": "2"
           },
           {
             "Name": "Loop 2",
-            "TripCount": "78400",
-            "Latency": "156800",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          },
-          {
-            "Name": "Loop 3",
-            "TripCount": "100",
-            "Latency": "200",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          },
-          {
-            "Name": "Loop 4",
-            "TripCount": "50",
-            "Latency": "50",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 5",
-            "TripCount": "5000",
-            "Latency": "10000",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          },
-          {
-            "Name": "Loop 6",
-            "TripCount": "50",
-            "Latency": "100",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          },
-          {
-            "Name": "Loop 7",
-            "TripCount": "25",
-            "Latency": "25",
-            "PipelineII": "",
-            "PipelineDepth": "1"
-          },
-          {
-            "Name": "Loop 8",
-            "TripCount": "1250",
-            "Latency": "2500",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          },
-          {
-            "Name": "Loop 9",
-            "TripCount": "25",
-            "Latency": "50",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          },
-          {
-            "Name": "Loop 10",
-            "TripCount": "250",
-            "Latency": "500",
-            "PipelineII": "",
-            "PipelineDepth": "2"
-          },
-          {
-            "Name": "Loop 11",
             "TripCount": "10",
             "Latency": "20",
             "PipelineII": "",
@@ -1791,10 +1992,10 @@
           }
         ],
         "Area": {
-          "BRAM_18K": "3401",
-          "DSP48E": "340",
-          "FF": "50931",
-          "LUT": "42623"
+          "BRAM_18K": "870",
+          "DSP48E": "329",
+          "FF": "49842",
+          "LUT": "41974"
         }
       }
     }
@@ -1806,7 +2007,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2024-04-15 13:15:03 +0530",
+    "Time": "2024-04-18 00:49:17 +0530",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.2"
   }

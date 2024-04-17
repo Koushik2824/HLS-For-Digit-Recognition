@@ -16,7 +16,25 @@ struct k2c_tensor
     size_t shape[K2C_MAX_NDIM];
 };
 typedef struct k2c_tensor k2c_tensor;
-float* vlsiModel(k2c_tensor *dense_input_input, k2c_tensor *dense_3_output, float dense_input_input_array[784]); 
+
+struct k2c_tensor2
+{
+    /** Pointer to array of tensor values flattened in row major order. */
+    float array[784];
+
+    /** Rank of the tensor (number of dimensions). */
+    size_t ndim;
+
+    /** Number of elements in the tensor. */
+    size_t numel;
+
+    /** Array, size of the tensor in each dimension. */
+    size_t shape[K2C_MAX_NDIM];
+};
+typedef struct k2c_tensor2 k2c_tensor2;
+
+
+void vlsiModel(k2c_tensor2 *dense_input_input, k2c_tensor2 *dense_3_output); 
 void k2c_relu_func(float *x, const size_t size);
 void k2c_softmax_func(float *x, const size_t size);
 void k2c_idx2sub(const size_t idx, size_t *sub, const size_t *shape, const size_t ndim);
