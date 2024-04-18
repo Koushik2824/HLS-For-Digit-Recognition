@@ -1,2 +1,8 @@
 .vscode/
 build/
+*.log
+vlsiModel/.apc/
+vlsiModel/.settings/
+vlsiModel/.project
+vlsiModel/.cproject
+vlsiModel/vivado_hls.app

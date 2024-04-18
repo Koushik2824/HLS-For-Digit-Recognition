@@ -29,42 +29,42 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/.apc/.src</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/.apc/.tb</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/solution1/.tcls</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/vlsiModel.c</name>
 			<type>1</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel.c</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel.c</location>
 		</link>
 		<link>
 			<name>testbench/vlsiModel_test_suite.c</name>
 			<type>1</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel_test_suite.c</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel_test_suite.c</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/solution1/solution1.directive</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/solution1/directives.tcl</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/solution1/script.tcl</location>
+			<location>C:/vlsi/vlsiModel/vlsiModel/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

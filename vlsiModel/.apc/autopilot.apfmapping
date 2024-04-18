@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="vlsiModel.c" path="C:\Users\mssri\Desktop\books\CS577_CbasedVLSI\Project\vlsiModel\vlsiModel.c"/>
+    <originFiles name="vlsiModel.c" path="C:\vlsi\vlsiModel\vlsiModel.c"/>
   </source>
   <testbench>
-    <originFiles name="vlsiModel_test_suite.c" path="C:\Users\mssri\Desktop\books\CS577_CbasedVLSI\Project\vlsiModel\vlsiModel_test_suite.c"/>
+    <originFiles name="vlsiModel_test_suite.c" path="C:\vlsi\vlsiModel\vlsiModel_test_suite.c"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>
