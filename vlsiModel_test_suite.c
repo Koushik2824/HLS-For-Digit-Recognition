@@ -808,7 +808,7 @@ float keras_dense_3_test1_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test1;
 // k2c_tensor2 keras_dense_3_test1 = {&keras_dense_3_test1_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test1_array;
+// float *c_dense_3_test1_array;
 k2c_tensor2 c_dense_3_test1;
 // k2c_tensor2 c_dense_3_test1 = {&c_dense_3_test1_array[0],1,10,{10, 1, 1, 1, 1}};
 float test2_dense_input_input_array[784] = {
@@ -1613,7 +1613,7 @@ float keras_dense_3_test2_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test2;
 // k2c_tensor2 keras_dense_3_test2 = {&keras_dense_3_test2_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test2_array;
+// float *c_dense_3_test2_array;
 k2c_tensor2 c_dense_3_test2;
 // k2c_tensor2 c_dense_3_test2 = {&c_dense_3_test2_array[0],1,10,{10, 1, 1, 1, 1}};
 float test3_dense_input_input_array[784] = {
@@ -2418,7 +2418,7 @@ float keras_dense_3_test3_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test3;
 // k2c_tensor2 keras_dense_3_test3 = {&keras_dense_3_test3_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test3_array;
+// float *c_dense_3_test3_array;
 k2c_tensor2 c_dense_3_test3;
 // k2c_tensor2 c_dense_3_test3 = {&c_dense_3_test3_array[0],1,10,{10, 1, 1, 1, 1}};
 float test4_dense_input_input_array[784] = {
@@ -3223,7 +3223,7 @@ float keras_dense_3_test4_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test4;
 // k2c_tensor2 keras_dense_3_test4 = {&keras_dense_3_test4_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test4_array;
+// float *c_dense_3_test4_array;
 k2c_tensor2 c_dense_3_test4;
 // k2c_tensor2 c_dense_3_test4 = {&c_dense_3_test4_array[0],1,10,{10, 1, 1, 1, 1}};
 float test5_dense_input_input_array[784] = {
@@ -4028,7 +4028,7 @@ float keras_dense_3_test5_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test5;
 // k2c_tensor2 keras_dense_3_test5 = {&keras_dense_3_test5_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test5_array;
+// float *c_dense_3_test5_array;
 k2c_tensor2 c_dense_3_test5;
 // k2c_tensor2 c_dense_3_test5 = {&c_dense_3_test5_array[0],1,10,{10, 1, 1, 1, 1}};
 float test6_dense_input_input_array[784] = {
@@ -4833,7 +4833,7 @@ float keras_dense_3_test6_array[10] = {
 };
 k2c_tensor2 c_dense_3_test6;
 // k2c_tensor2 keras_dense_3_test6 = {&keras_dense_3_test6_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test6_array;
+// float *c_dense_3_test6_array;
 k2c_tensor2 keras_dense_3_test6;
 // k2c_tensor2 c_dense_3_test6 = {&c_dense_3_test6_array[0],1,10,{10, 1, 1, 1, 1}};
 float test7_dense_input_input_array[784] = {
@@ -5638,7 +5638,7 @@ float keras_dense_3_test7_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test7;
 // k2c_tensor2 keras_dense_3_test7 = {&keras_dense_3_test7_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test7_array;
+// float *c_dense_3_test7_array;
 k2c_tensor2 c_dense_3_test7;
 // k2c_tensor2 c_dense_3_test7 = {&c_dense_3_test7_array[0],1,10,{10, 1, 1, 1, 1}};
 float test8_dense_input_input_array[784] = {
@@ -6443,7 +6443,7 @@ float keras_dense_3_test8_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test8;
 // k2c_tensor2 keras_dense_3_test8 = {&keras_dense_3_test8_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test8_array;
+// float *c_dense_3_test8_array;
 k2c_tensor2 c_dense_3_test8;
 // k2c_tensor2 c_dense_3_test8 = {&c_dense_3_test8_array[0],1,10,{10, 1, 1, 1, 1}};
 float test9_dense_input_input_array[784] = {
@@ -7248,7 +7248,7 @@ float keras_dense_3_test9_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test9;
 // k2c_tensor2 keras_dense_3_test9 = {&keras_dense_3_test9_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test9_array;
+// float *c_dense_3_test9_array;
 k2c_tensor2 c_dense_3_test9;
 // k2c_tensor2 c_dense_3_test9 = {&c_dense_3_test9_array[0],1,10,{10, 1, 1, 1, 1}};
 float test10_dense_input_input_array[784] = {
@@ -8053,11 +8053,12 @@ float keras_dense_3_test10_array[10] = {
 };
 k2c_tensor2 keras_dense_3_test10;
 // k2c_tensor2 keras_dense_3_test10 = {&keras_dense_3_test10_array[0],1,10,{10, 1, 1, 1, 1}};
-float *c_dense_3_test10_array;
+// float *c_dense_3_test10_array;
 k2c_tensor2 c_dense_3_test10;
 // k2c_tensor2 c_dense_3_test10 = {&c_dense_3_test10_array[0],1,10,{10, 1, 1, 1, 1}};
 
-void initialize_test_arrays() {
+void initialize_test_arrays()
+{
 
     test1_dense_input_input.ndim = 1;
     test1_dense_input_input.numel = 784;
@@ -8067,7 +8068,8 @@ void initialize_test_arrays() {
     test1_dense_input_input.shape[3] = 1;
     test1_dense_input_input.shape[4] = 1;
     size_t z1;
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test1_dense_input_input.array[z1] = test1_dense_input_input_array[z1];
     }
 
@@ -8079,7 +8081,8 @@ void initialize_test_arrays() {
     keras_dense_3_test1.shape[3] = 1;
     keras_dense_3_test1.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test1.array[z1] = keras_dense_3_test1_array[z1];
     }
 
@@ -8091,9 +8094,10 @@ void initialize_test_arrays() {
     c_dense_3_test1.shape[3] = 1;
     c_dense_3_test1.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test1.array[z1] = c_dense_3_test1_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test1.array[z1] = 0;
+    }
 
     test2_dense_input_input.ndim = 1;
     test2_dense_input_input.numel = 784;
@@ -8103,7 +8107,8 @@ void initialize_test_arrays() {
     test2_dense_input_input.shape[3] = 1;
     test2_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test2_dense_input_input.array[z1] = test2_dense_input_input_array[z1];
     }
 
@@ -8115,7 +8120,8 @@ void initialize_test_arrays() {
     keras_dense_3_test2.shape[3] = 1;
     keras_dense_3_test2.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test2.array[z1] = keras_dense_3_test2_array[z1];
     }
 
@@ -8127,9 +8133,10 @@ void initialize_test_arrays() {
     c_dense_3_test2.shape[3] = 1;
     c_dense_3_test2.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test2.array[z1] = c_dense_3_test2_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test2.array[z1] = 0;
+    }
 
     test3_dense_input_input.ndim = 1;
     test3_dense_input_input.numel = 784;
@@ -8139,7 +8146,8 @@ void initialize_test_arrays() {
     test3_dense_input_input.shape[3] = 1;
     test3_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test3_dense_input_input.array[z1] = test3_dense_input_input_array[z1];
     }
 
@@ -8151,7 +8159,8 @@ void initialize_test_arrays() {
     keras_dense_3_test3.shape[3] = 1;
     keras_dense_3_test3.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test3.array[z1] = keras_dense_3_test3_array[z1];
     }
 
@@ -8163,10 +8172,11 @@ void initialize_test_arrays() {
     c_dense_3_test3.shape[3] = 1;
     c_dense_3_test3.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test3.array[z1] = c_dense_3_test3_array[z1];
-    // }
-    
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test3.array[z1] = 0;
+    }
+
     test4_dense_input_input.ndim = 1;
     test4_dense_input_input.numel = 784;
     test4_dense_input_input.shape[0] = 784;
@@ -8175,7 +8185,8 @@ void initialize_test_arrays() {
     test4_dense_input_input.shape[3] = 1;
     test4_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test4_dense_input_input.array[z1] = test4_dense_input_input_array[z1];
     }
 
@@ -8187,7 +8198,8 @@ void initialize_test_arrays() {
     keras_dense_3_test4.shape[3] = 1;
     keras_dense_3_test4.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test4.array[z1] = keras_dense_3_test4_array[z1];
     }
 
@@ -8199,9 +8211,10 @@ void initialize_test_arrays() {
     c_dense_3_test4.shape[3] = 1;
     c_dense_3_test4.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test4.array[z1] = c_dense_3_test4_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test4.array[z1] = 0;
+    }
 
     test5_dense_input_input.ndim = 1;
     test5_dense_input_input.numel = 784;
@@ -8211,7 +8224,8 @@ void initialize_test_arrays() {
     test5_dense_input_input.shape[3] = 1;
     test5_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test5_dense_input_input.array[z1] = test5_dense_input_input_array[z1];
     }
 
@@ -8223,7 +8237,8 @@ void initialize_test_arrays() {
     keras_dense_3_test5.shape[3] = 1;
     keras_dense_3_test5.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test5.array[z1] = keras_dense_3_test5_array[z1];
     }
 
@@ -8235,9 +8250,10 @@ void initialize_test_arrays() {
     c_dense_3_test5.shape[3] = 1;
     c_dense_3_test5.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test5.array[z1] = c_dense_3_test5_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test5.array[z1] = 0;
+    }
 
     test6_dense_input_input.ndim = 1;
     test6_dense_input_input.numel = 784;
@@ -8247,7 +8263,8 @@ void initialize_test_arrays() {
     test6_dense_input_input.shape[3] = 1;
     test6_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test6_dense_input_input.array[z1] = test6_dense_input_input_array[z1];
     }
 
@@ -8259,7 +8276,8 @@ void initialize_test_arrays() {
     keras_dense_3_test6.shape[3] = 1;
     keras_dense_3_test6.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test6.array[z1] = keras_dense_3_test6_array[z1];
     }
 
@@ -8271,9 +8289,10 @@ void initialize_test_arrays() {
     c_dense_3_test6.shape[3] = 1;
     c_dense_3_test6.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test6.array[z1] = c_dense_3_test6_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test6.array[z1] = 0;
+    }
 
     test7_dense_input_input.ndim = 1;
     test7_dense_input_input.numel = 784;
@@ -8283,7 +8302,8 @@ void initialize_test_arrays() {
     test7_dense_input_input.shape[3] = 1;
     test7_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test7_dense_input_input.array[z1] = test7_dense_input_input_array[z1];
     }
 
@@ -8295,7 +8315,8 @@ void initialize_test_arrays() {
     keras_dense_3_test7.shape[3] = 1;
     keras_dense_3_test7.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test7.array[z1] = keras_dense_3_test7_array[z1];
     }
 
@@ -8307,9 +8328,10 @@ void initialize_test_arrays() {
     c_dense_3_test7.shape[3] = 1;
     c_dense_3_test7.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test7.array[z1] = c_dense_3_test7_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test7.array[z1] = 0;
+    }
 
     test8_dense_input_input.ndim = 1;
     test8_dense_input_input.numel = 784;
@@ -8319,7 +8341,8 @@ void initialize_test_arrays() {
     test8_dense_input_input.shape[3] = 1;
     test8_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test8_dense_input_input.array[z1] = test8_dense_input_input_array[z1];
     }
 
@@ -8331,7 +8354,8 @@ void initialize_test_arrays() {
     keras_dense_3_test8.shape[3] = 1;
     keras_dense_3_test8.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test8.array[z1] = keras_dense_3_test8_array[z1];
     }
 
@@ -8343,9 +8367,10 @@ void initialize_test_arrays() {
     c_dense_3_test8.shape[3] = 1;
     c_dense_3_test8.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test8.array[z1] = c_dense_3_test8_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test8.array[z1] = 0;
+    }
 
     test9_dense_input_input.ndim = 1;
     test9_dense_input_input.numel = 784;
@@ -8355,7 +8380,8 @@ void initialize_test_arrays() {
     test9_dense_input_input.shape[3] = 1;
     test9_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test9_dense_input_input.array[z1] = test9_dense_input_input_array[z1];
     }
 
@@ -8367,7 +8393,8 @@ void initialize_test_arrays() {
     keras_dense_3_test9.shape[3] = 1;
     keras_dense_3_test9.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test9.array[z1] = keras_dense_3_test9_array[z1];
     }
 
@@ -8379,9 +8406,10 @@ void initialize_test_arrays() {
     c_dense_3_test9.shape[3] = 1;
     c_dense_3_test9.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test9.array[z1] = c_dense_3_test9_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test9.array[z1] = 0;
+    }
 
     test10_dense_input_input.ndim = 1;
     test10_dense_input_input.numel = 784;
@@ -8391,7 +8419,8 @@ void initialize_test_arrays() {
     test10_dense_input_input.shape[3] = 1;
     test10_dense_input_input.shape[4] = 1;
 
-    for (z1 = 0; z1 < 784; z1++) {
+    for (z1 = 0; z1 < 784; z1++)
+    {
         test10_dense_input_input.array[z1] = test10_dense_input_input_array[z1];
     }
 
@@ -8403,7 +8432,8 @@ void initialize_test_arrays() {
     keras_dense_3_test10.shape[3] = 1;
     keras_dense_3_test10.shape[4] = 1;
 
-    for (z1 = 0; z1 < 10; z1++) {
+    for (z1 = 0; z1 < 10; z1++)
+    {
         keras_dense_3_test10.array[z1] = keras_dense_3_test10_array[z1];
     }
 
@@ -8415,9 +8445,10 @@ void initialize_test_arrays() {
     c_dense_3_test10.shape[3] = 1;
     c_dense_3_test10.shape[4] = 1;
 
-    // for (z1 = 0; z1 < 10; z1++) {
-    //     c_dense_3_test10.array[z1] = c_dense_3_test10_array[z1];
-    // }
+    for (z1 = 0; z1 < 10; z1++)
+    {
+        c_dense_3_test10.array[z1] = 0;
+    }
 }
 
 int main()

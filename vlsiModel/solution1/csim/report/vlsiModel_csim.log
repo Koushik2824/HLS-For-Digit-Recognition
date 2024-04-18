@@ -2,18 +2,18 @@ INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling(apcc) ../../../../vlsiModel_test_suite.c in debug mode
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'sidda' on host 'siddardhahp' (Windows NT_amd64 version 6.2) on Thu Apr 18 00:47:46 +0530 2024
-INFO: [HLS 200-10] In directory 'C:/vlsi/vlsiModel/vlsiModel/solution1/csim/build'
+INFO: [HLS 200-10] For user 'mssri' on host 'msaisrinivas' (Windows NT_amd64 version 6.2) on Thu Apr 18 18:38:30 +0530 2024
+INFO: [HLS 200-10] In directory 'C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/solution1/csim/build'
 INFO: [APCC 202-3] Tmp directory is apcc_db
 INFO: [APCC 202-1] APCC is done.
    Compiling(apcc) ../../../../vlsiModel.c in debug mode
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'sidda' on host 'siddardhahp' (Windows NT_amd64 version 6.2) on Thu Apr 18 00:47:54 +0530 2024
-INFO: [HLS 200-10] In directory 'C:/vlsi/vlsiModel/vlsiModel/solution1/csim/build'
+INFO: [HLS 200-10] For user 'mssri' on host 'msaisrinivas' (Windows NT_amd64 version 6.2) on Thu Apr 18 18:38:47 +0530 2024
+INFO: [HLS 200-10] In directory 'C:/Users/mssri/Desktop/books/CS577_CbasedVLSI/Project/vlsiModel/vlsiModel/solution1/csim/build'
 INFO: [APCC 202-3] Tmp directory is apcc_db
 INFO: [APCC 202-1] APCC is done.
    Generating csim.exe
-Average time over 10 tests: 3.000000e-004 s 
+Average time over 10 tests: 3.000000e-003 s 
 Max absolute error for 10 tests: 1.370907e-006 
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

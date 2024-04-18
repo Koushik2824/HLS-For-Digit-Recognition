@@ -4,7 +4,6 @@
 
 void k2c_relu_func(float *x, const size_t size)
 {
-
     for (size_t i = 0; i < size; ++i)
     {
         if (x[i] <= 0.0f)
@@ -13,9 +12,9 @@ void k2c_relu_func(float *x, const size_t size)
         }
     }
 }
+
 void k2c_softmax_func(float *x, const size_t size)
 {
-
     float xmax = x[0];
     float sum = 0;
     for (size_t i = 0; i < size; ++i)
@@ -42,9 +41,9 @@ void k2c_softmax_func(float *x, const size_t size)
         x[l] = x[l] * sum;
     }
 }
+
 void k2c_affine_matmul(float *C, const float *A, const float *B, const float *d, const size_t outrows, const size_t outcols, const size_t innerdim)
 {
-
     // make sure output is empty
     // memset(C, 0, outrows*outcols*sizeof(C[0]));
     for (size_t p = 0; p < outrows * outcols; p++)
@@ -65,9 +64,9 @@ void k2c_affine_matmul(float *C, const float *A, const float *B, const float *d,
         }
     }
 }
+
 void k2c_idx2sub(const size_t idx, size_t *sub, const size_t *shape, const size_t ndim)
 {
-
     size_t idx2 = idx;
     for (int i = ndim - 1; i >= 0; --i)
     {
@@ -75,9 +74,9 @@ void k2c_idx2sub(const size_t idx, size_t *sub, const size_t *shape, const size_
         idx2 /= shape[i];
     }
 }
+
 size_t k2c_sub2idx(const size_t *sub, const size_t *shape, const size_t ndim)
 {
-
     size_t idx = 0;
     size_t temp = 0;
     for (size_t i = 0; i < ndim; ++i)
@@ -91,9 +90,9 @@ size_t k2c_sub2idx(const size_t *sub, const size_t *shape, const size_t ndim)
     }
     return idx;
 }
+
 void k2c_matmul(float *C, const float *A, const float *B, const size_t outrows, const size_t outcols, const size_t innerdim)
 {
-
     // make sure output is empty
     // memset(C, 0, outrows*outcols*sizeof(C[0]));
     for (size_t a10 = 0; a10 < outrows * outcols; a10++)
@@ -113,8 +112,8 @@ void k2c_matmul(float *C, const float *A, const float *B, const size_t outrows, 
         }
     }
 }
-void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, int activation, float * fwork,float * output_array,float * input_array,float * kernel_array, float * bias_array) {
 
+void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* kernel, const k2c_tensor* bias, int activation, float * fwork,float * output_array,float * input_array,float * kernel_array, float * bias_array) {
     if (input->ndim <=2) {
         size_t outrows;
 
@@ -148,6 +147,7 @@ void k2c_dense(k2c_tensor* output, const k2c_tensor* input, const k2c_tensor* ke
             k2c_softmax_func(output_array,output->numel);
     }
 }
+
 void k2c_dot(k2c_tensor* C, const k2c_tensor* A, const k2c_tensor* B, const size_t * axesA, const size_t * axesB, const size_t naxes, const int normalize, float * fwork,float * C_array,float * A_array,float * B_array) {
     size_t permA[K2C_MAX_NDIM];
     size_t permB[K2C_MAX_NDIM];
@@ -220,8 +220,6 @@ void k2c_dot(k2c_tensor* C, const k2c_tensor* A, const k2c_tensor* B, const size
         permB[i] = freeB[j];
     }
 
-
-
     for (i=0; i<ndimA; ++i) {
         newshpA[i] = A->shape[permA[i]];
     }
@@ -278,8 +276,8 @@ void k2c_dot(k2c_tensor* C, const k2c_tensor* A, const k2c_tensor* B, const size
     k2c_matmul(C_array, reshapeA, reshapeB, free_axesA,
                free_axesB, prod_axesA);
 }
-void k2c_bias_add(k2c_tensor* A, const k2c_tensor* b,float * A_array,float * b_array) {
 
+void k2c_bias_add(k2c_tensor* A, const k2c_tensor* b,float * A_array,float * b_array) {
     for (size_t i=0; i<A->numel; i+=b->numel) {
         for (size_t j=0; j<b->numel; ++j) {
             A_array[i+j] += b_array[j];
@@ -300,6 +298,7 @@ k2c_tensor dense_2_bias;
 k2c_tensor dense_3_output;
 k2c_tensor dense_3_kernel;
 k2c_tensor dense_3_bias;
+
 float dense_kernel_array[78400] = {
 -5.87119758e-02f,
 +1.69090852e-02f,
@@ -85410,6 +85409,7 @@ float dense_2_bias_array[25] = {
 };
 float dense_input_input_array[784];
 float dense_3_output_array[10];
+
 void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
 {
     for (size_t z1 = 0; z1 < 784; z1++)
@@ -85440,7 +85440,7 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     //     dense_output.array[z11] = dense_output_array[z11];
     // }
 
-// k2c_tensor dense_kernel = {&dense_kernel_array[0],2,78400,{784,100,  1,  1,  1}};
+    // k2c_tensor dense_kernel = {&dense_kernel_array[0],2,78400,{784,100,  1,  1,  1}};
     
     dense_kernel.ndim = 2;
     dense_kernel.numel = 78400;
@@ -85455,7 +85455,7 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     //     dense_kernel.array[z10] = dense_kernel_array[z10];
     // }
 
-// k2c_tensor dense_bias = {&dense_bias_array[0],1,100,{100,  1,  1,  1,  1}};
+    // k2c_tensor dense_bias = {&dense_bias_array[0],1,100,{100,  1,  1,  1,  1}};
     
     dense_bias.ndim = 1;
     dense_bias.numel = 100;
@@ -85470,7 +85470,6 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     //     dense_bias.array[z9] = dense_bias_array[z9];
     // }
 
-    
     // k2c_tensor dense_1_output = {&dense_1_output_array[0],1,50,{50, 1, 1, 1, 1}};
     
     dense_1_output.ndim = 1;
@@ -85486,7 +85485,7 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     //     dense_1_output.array[z8] = dense_1_output_array[z8];
     // }
 
-// k2c_tensor dense_1_kernel = {&dense_1_kernel_array[0],2,5000,{100, 50,  1,  1,  1}};
+    // k2c_tensor dense_1_kernel = {&dense_1_kernel_array[0],2,5000,{100, 50,  1,  1,  1}};
     
     dense_1_kernel.ndim = 2;
     dense_1_kernel.numel = 5000;
@@ -85501,7 +85500,7 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     //     dense_1_kernel.array[z7] = dense_1_kernel_array[z7];
     // }
 
-// k2c_tensor dense_1_bias = {&dense_1_bias_array[0],1,50,{50, 1, 1, 1, 1}};
+    // k2c_tensor dense_1_bias = {&dense_1_bias_array[0],1,50,{50, 1, 1, 1, 1}};
     
     dense_1_bias.ndim = 1;
     dense_1_bias.numel = 50;
@@ -85514,9 +85513,8 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     // for (size_t z6 = 0; z6 < 50; z6++)
     // {
     //     dense_1_bias.array[z6] = dense_1_bias_array[z6];
-    // }
+    // }    
 
-    
     // k2c_tensor dense_2_output = {&dense_2_output_array[0],1,25,{25, 1, 1, 1, 1}};
     
     dense_2_output.ndim = 1;
@@ -85531,7 +85529,8 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     // {
     //     dense_2_output.array[z5] = dense_2_output_array[z5];
     // }
-// k2c_tensor dense_2_kernel = {&dense_2_kernel_array[0],2,1250,{50,25, 1, 1, 1}};
+
+    // k2c_tensor dense_2_kernel = {&dense_2_kernel_array[0],2,1250,{50,25, 1, 1, 1}};
     
     dense_2_kernel.ndim = 2;
     dense_2_kernel.numel = 1250;
@@ -85546,7 +85545,7 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     //     dense_2_kernel.array[z4] = dense_2_kernel_array[z4];
     // }
 
-// k2c_tensor dense_2_bias = {&dense_2_bias_array[0],1,25,{25, 1, 1, 1, 1}};
+    // k2c_tensor dense_2_bias = {&dense_2_bias_array[0],1,25,{25, 1, 1, 1, 1}};
     
     dense_2_bias.ndim = 1;
     dense_2_bias.numel = 25;
@@ -85561,7 +85560,7 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     //     dense_2_bias.array[z3] = dense_2_bias_array[z3];
     // }
 
-// k2c_tensor dense_3_kernel = {&dense_3_kernel_array[0],2,250,{25,10, 1, 1, 1}};
+    // k2c_tensor dense_3_kernel = {&dense_3_kernel_array[0],2,250,{25,10, 1, 1, 1}};
     
     dense_3_kernel.ndim = 2;
     dense_3_kernel.numel = 250;
@@ -85575,12 +85574,14 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     // {
     //     dense_3_kernel.array[z2] = dense_3_kernel_array[z2];
     // }
-// k2c_tensor dense_3_bias = {&dense_3_bias_array[0],1,10,{10, 1, 1, 1, 1}};
+
+    // k2c_tensor dense_3_bias = {&dense_3_bias_array[0],1,10,{10, 1, 1, 1, 1}};
     
     // for (size_t z1 = 0; z1 < 10; z1++)
     // {
     //     dense_3_bias.array[z1] = dense_3_bias_array[z1];
     // }
+
     dense_3_bias.ndim = 1;
     dense_3_bias.numel = 10;
     dense_3_bias.shape[0] = 10;
@@ -85589,7 +85590,6 @@ void vlsiModel(k2c_tensor2 *dense_input_input_, k2c_tensor2 *dense_3_output_)
     dense_3_bias.shape[3] = 1;
     dense_3_bias.shape[4] = 1;
 
-    
 
     k2c_dense(&dense_output, &dense_input_input, &dense_kernel, &dense_bias, 0, dense_fwork, dense_output_array, dense_input_input_array, dense_kernel_array, dense_bias_array);
     k2c_dense(&dense_1_output, &dense_output, &dense_1_kernel, &dense_1_bias, 0, dense_1_fwork, dense_1_output_array, dense_output_array, dense_1_kernel_array, dense_1_bias_array);

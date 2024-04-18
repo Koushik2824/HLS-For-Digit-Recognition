@@ -6,7 +6,7 @@
 open_project vlsiModel
 set_top vlsiModel
 add_files vlsiModel.c
-add_files -tb vlsiModel_test_suite.c -cflags "-Wno-unknown-pragmas"
+add_files -tb vlsiModel_test_suite.c -cflags "-Wno-unknown-pragmas -Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7a200tfbg676-2} -tool vivado
 create_clock -period 10 -name default

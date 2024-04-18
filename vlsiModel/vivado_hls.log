@@ -1,0 +1,23 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vivado/2018.2/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'mssri' on host 'msaisrinivas' (Windows NT_amd64 version 6.2) on Thu Apr 18 18:25:12 +0530 2024
+INFO: [HLS 200-10] In directory 'C:/Users/mssri/Desktop/books/CS577 CbasedVLSI/Project/vlsiModel/vlsiModel'
+C:UsersmssriDesktopooksCS577 can't be opened.
+couldn't read file "C:UsersmssriDesktopooksCS577": no such file or directory
+    while executing
+"source C:UsersmssriDesktopooksCS577"
+    invoked from within
+"hls::main C:\Users\mssri\Desktop\books\CS577 CbasedVLSI\Project\vlsiModel\vlsiModel\vivado_hls.app"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"
+INFO: [Common 17-206] Exiting vivado_hls at Thu Apr 18 18:25:12 2024...
