@@ -1,7 +1,0 @@
-Running: xsim.dir/vlsiModel/xsimk.exe -simmode gui -wdb vlsiModel.wdb -simrunnum 0 -socket 52963
-Design successfully loaded
-Design Loading Memory Usage: 36488 KB (Peak: 36488 KB)
-Design Loading CPU Usage: 93 ms
-Simulation completed
-Simulation Memory Usage: 40636 KB (Peak: 40636 KB)
-Simulation CPU Usage: 2861703 ms

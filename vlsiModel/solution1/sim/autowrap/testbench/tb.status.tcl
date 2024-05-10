@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName vlsiModel.c_pre.c.tb.c

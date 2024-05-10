@@ -1,0 +1,266 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_latency_ap_fixed_ap_fixed_16_6_5_3_0_config8_0_0_0_0_0_0_0_0_0_0_0'
+================================================================
+* Date:           Tue Apr 23 23:43:44 2024
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: artix7
+* Target device:  xc7a200tfbg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.392|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1394|  1394|  1394|  1394|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |              |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Product1    |  800|  800|        32|          -|          -|    25|    no    |
+        | + Product2   |   30|   30|         3|          -|          -|    10|    no    |
+        |- ResetAccum  |   20|   20|         2|          -|          -|    10|    no    |
+        |- Accum1      |  550|  550|        22|          -|          -|    25|    no    |
+        | + Accum2     |   20|   20|         2|          -|          -|    10|    no    |
+        |- Result      |   20|   20|         2|          -|          -|    10|    no    |
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      1|       0|     229|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        -|      -|       0|     188|
+|Memory           |        2|      -|       0|       0|
+|Multiplexer      |        -|      -|       -|     215|
+|Register         |        -|      -|     614|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        2|      1|     614|     632|
++-----------------+---------+-------+--------+--------+
+|Available        |      730|    740|  269200|  129000|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |    ~0   |   ~0  |   ~0   |   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------+--------------------------+---------+-------+---+----+
+    |            Instance           |          Module          | BRAM_18K| DSP48E| FF| LUT|
+    +-------------------------------+--------------------------+---------+-------+---+----+
+    |myproject_mux_104_16_1_1_U351  |myproject_mux_104_16_1_1  |        0|      0|  0|  47|
+    |myproject_mux_104_16_1_1_U352  |myproject_mux_104_16_1_1  |        0|      0|  0|  47|
+    |myproject_mux_104_16_1_1_U353  |myproject_mux_104_16_1_1  |        0|      0|  0|  47|
+    |myproject_mux_255_16_1_1_U350  |myproject_mux_255_16_1_1  |        0|      0|  0|  47|
+    +-------------------------------+--------------------------+---------+-------+---+----+
+    |Total                          |                          |        0|      0|  0| 188|
+    +-------------------------------+--------------------------+---------+-------+---+----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +----------+---------------------------------------------------------------------------------+---------+---+----+------+-----+------+-------------+
+    |  Memory  |                                      Module                                     | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +----------+---------------------------------------------------------------------------------+---------+---+----+------+-----+------+-------------+
+    |mult_V_U  |dense_latency_ap_fixed_ap_fixed_16_6_5_3_0_config8_0_0_0_0_0_0_0_0_0_0_0_mult_V  |        1|  0|   0|   250|   16|     1|         4000|
+    |w8_V_U    |dense_latency_ap_fixed_ap_fixed_16_6_5_3_0_config8_0_0_0_0_0_0_0_0_0_0_0_w8_V    |        1|  0|   0|   250|   11|     1|         2750|
+    +----------+---------------------------------------------------------------------------------+---------+---+----+------+-----+------+-------------+
+    |Total     |                                                                                 |        2|  0|   0|   500|   27|     2|         6750|
+    +----------+---------------------------------------------------------------------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |p_Val2_s_fu_680_p2    |     *    |      1|  0|   6|          16|          11|
+    |acc_0_V_1_fu_1938_p2  |     +    |      0|  0|  23|          16|          16|
+    |iacc_1_fu_1717_p2     |     +    |      0|  0|  13|           4|           1|
+    |ii_1_fu_1574_p2       |     +    |      0|  0|  15|           5|           1|
+    |ii_2_fu_1855_p2       |     +    |      0|  0|  15|           5|           1|
+    |index_1_fu_1902_p2    |     +    |      0|  0|  15|           8|           8|
+    |index_fu_1656_p2      |     +    |      0|  0|  15|           8|           8|
+    |ires_1_fu_2000_p2     |     +    |      0|  0|  13|           4|           1|
+    |jj_1_fu_1641_p2       |     +    |      0|  0|  13|           4|           1|
+    |jj_2_fu_1887_p2       |     +    |      0|  0|  13|           4|           1|
+    |tmp1_fu_1647_p2       |     +    |      0|  0|  15|           6|           6|
+    |tmp2_fu_1893_p2       |     +    |      0|  0|  15|           6|           6|
+    |tmp_2_fu_1849_p2      |   icmp   |      0|  0|  11|           5|           4|
+    |tmp_3_fu_1635_p2      |   icmp   |      0|  0|   9|           4|           4|
+    |tmp_4_fu_1994_p2      |   icmp   |      0|  0|   9|           4|           4|
+    |tmp_5_fu_1881_p2      |   icmp   |      0|  0|   9|           4|           4|
+    |tmp_fu_1568_p2        |   icmp   |      0|  0|  11|           5|           4|
+    |tmp_s_fu_1711_p2      |   icmp   |      0|  0|   9|           4|           4|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      1|  0| 229|         112|          85|
+    +----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+----+-----------+-----+-----------+
+    |        Name       | LUT| Input Size| Bits| Total Bits|
+    +-------------------+----+-----------+-----+-----------+
+    |acc_9_V_11_fu_202  |   9|          2|   16|         32|
+    |acc_9_V_12_fu_206  |   9|          2|   16|         32|
+    |acc_9_V_13_fu_210  |   9|          2|   16|         32|
+    |acc_9_V_14_fu_214  |   9|          2|   16|         32|
+    |acc_9_V_15_fu_218  |   9|          2|   16|         32|
+    |acc_9_V_16_fu_222  |   9|          2|   16|         32|
+    |acc_9_V_17_fu_226  |   9|          2|   16|         32|
+    |acc_9_V_18_fu_230  |   9|          2|   16|         32|
+    |acc_9_V_19_fu_234  |   9|          2|   16|         32|
+    |acc_9_V_2_fu_238   |   9|          2|   16|         32|
+    |ap_NS_fsm          |  56|         13|    1|         13|
+    |iacc_reg_486       |   9|          2|    4|          8|
+    |ii2_reg_497        |   9|          2|    5|         10|
+    |ii_reg_464         |   9|          2|    5|         10|
+    |ires_reg_520       |   9|          2|    4|          8|
+    |jj3_reg_508        |   9|          2|    4|          8|
+    |jj_reg_475         |   9|          2|    4|          8|
+    |mult_V_address0    |  15|          3|    8|         24|
+    +-------------------+----+-----------+-----+-----------+
+    |Total              | 215|         48|  195|        409|
+    +-------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+----+----+-----+-----------+
+    |             Name            | FF | LUT| Bits| Const Bits|
+    +-----------------------------+----+----+-----+-----------+
+    |OP1_V_cast_reg_2315          |  26|   0|   26|          0|
+    |acc_9_V_10_fu_194            |  16|   0|   16|          0|
+    |acc_9_V_11_fu_202            |  16|   0|   16|          0|
+    |acc_9_V_12_fu_206            |  16|   0|   16|          0|
+    |acc_9_V_13_fu_210            |  16|   0|   16|          0|
+    |acc_9_V_14_fu_214            |  16|   0|   16|          0|
+    |acc_9_V_15_fu_218            |  16|   0|   16|          0|
+    |acc_9_V_16_fu_222            |  16|   0|   16|          0|
+    |acc_9_V_17_fu_226            |  16|   0|   16|          0|
+    |acc_9_V_18_fu_230            |  16|   0|   16|          0|
+    |acc_9_V_19_fu_234            |  16|   0|   16|          0|
+    |acc_9_V_1_fu_162             |  16|   0|   16|          0|
+    |acc_9_V_2_fu_238             |  16|   0|   16|          0|
+    |acc_9_V_3_fu_166             |  16|   0|   16|          0|
+    |acc_9_V_4_fu_170             |  16|   0|   16|          0|
+    |acc_9_V_5_fu_174             |  16|   0|   16|          0|
+    |acc_9_V_6_fu_178             |  16|   0|   16|          0|
+    |acc_9_V_7_fu_182             |  16|   0|   16|          0|
+    |acc_9_V_8_fu_186             |  16|   0|   16|          0|
+    |acc_9_V_9_fu_190             |  16|   0|   16|          0|
+    |acc_9_V_fu_198               |  16|   0|   16|          0|
+    |ap_CS_fsm                    |  12|   0|   12|          0|
+    |iacc_1_reg_2406              |   4|   0|    4|          0|
+    |iacc_reg_486                 |   4|   0|    4|          0|
+    |ii2_reg_497                  |   5|   0|    5|          0|
+    |ii_1_reg_2300                |   5|   0|    5|          0|
+    |ii_2_reg_2484                |   5|   0|    5|          0|
+    |ii_reg_464                   |   5|   0|    5|          0|
+    |ires_1_reg_2575              |   4|   0|    4|          0|
+    |ires_reg_520                 |   4|   0|    4|          0|
+    |jj3_reg_508                  |   4|   0|    4|          0|
+    |jj_1_reg_2383                |   4|   0|    4|          0|
+    |jj_2_reg_2562                |   4|   0|    4|          0|
+    |jj_reg_475                   |   4|   0|    4|          0|
+    |p_shl1_reg_2310              |   5|   0|    6|          1|
+    |p_shl2_reg_2489              |   5|   0|    8|          3|
+    |p_shl3_reg_2494              |   5|   0|    6|          1|
+    |p_shl_reg_2305               |   5|   0|    8|          3|
+    |res_0_V_write_assign_fu_250  |  16|   0|   16|          0|
+    |res_1_V_write_assign_fu_262  |  16|   0|   16|          0|
+    |res_2_V_write_assign_fu_274  |  16|   0|   16|          0|
+    |res_3_V_write_assign_fu_278  |  16|   0|   16|          0|
+    |res_4_V_write_assign_fu_270  |  16|   0|   16|          0|
+    |res_5_V_write_assign_fu_266  |  16|   0|   16|          0|
+    |res_6_V_write_assign_fu_258  |  16|   0|   16|          0|
+    |res_7_V_write_assign_fu_254  |  16|   0|   16|          0|
+    |res_8_V_write_assign_fu_246  |  16|   0|   16|          0|
+    |res_9_V_write_assign_fu_242  |  16|   0|   16|          0|
+    |tmp_6_reg_2388               |   8|   0|   64|         56|
+    |tmp_9_reg_2398               |  16|   0|   16|          0|
+    +-----------------------------+----+----+-----+-----------+
+    |Total                        | 614|   0|  678|         64|
+    +-----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------+-----+-----+------------+----------------------------------------------------------------------------+--------------+
+|  RTL Ports  | Dir | Bits|  Protocol  |                                Source Object                               |    C Type    |
++-------------+-----+-----+------------+----------------------------------------------------------------------------+--------------+
+|ap_clk       |  in |    1| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_rst       |  in |    1| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_start     |  in |    1| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_done      | out |    1| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_idle      | out |    1| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_ready     | out |    1| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_0  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_1  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_2  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_3  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_4  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_5  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_6  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_7  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_8  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|ap_return_9  | out |   16| ap_ctrl_hs | dense_latency<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.0.0.0.0.0.0.0.0.0.0.0 | return value |
+|p_read       |  in |   16|   ap_none  |                                   p_read                                   |    scalar    |
+|p_read1      |  in |   16|   ap_none  |                                   p_read1                                  |    scalar    |
+|p_read2      |  in |   16|   ap_none  |                                   p_read2                                  |    scalar    |
+|p_read3      |  in |   16|   ap_none  |                                   p_read3                                  |    scalar    |
+|p_read4      |  in |   16|   ap_none  |                                   p_read4                                  |    scalar    |
+|p_read5      |  in |   16|   ap_none  |                                   p_read5                                  |    scalar    |
+|p_read6      |  in |   16|   ap_none  |                                   p_read6                                  |    scalar    |
+|p_read7      |  in |   16|   ap_none  |                                   p_read7                                  |    scalar    |
+|p_read8      |  in |   16|   ap_none  |                                   p_read8                                  |    scalar    |
+|p_read9      |  in |   16|   ap_none  |                                   p_read9                                  |    scalar    |
+|p_read10     |  in |   16|   ap_none  |                                  p_read10                                  |    scalar    |
+|p_read11     |  in |   16|   ap_none  |                                  p_read11                                  |    scalar    |
+|p_read12     |  in |   16|   ap_none  |                                  p_read12                                  |    scalar    |
+|p_read13     |  in |   16|   ap_none  |                                  p_read13                                  |    scalar    |
+|p_read14     |  in |   16|   ap_none  |                                  p_read14                                  |    scalar    |
+|p_read15     |  in |   16|   ap_none  |                                  p_read15                                  |    scalar    |
+|p_read16     |  in |   16|   ap_none  |                                  p_read16                                  |    scalar    |
+|p_read17     |  in |   16|   ap_none  |                                  p_read17                                  |    scalar    |
+|p_read18     |  in |   16|   ap_none  |                                  p_read18                                  |    scalar    |
+|p_read19     |  in |   16|   ap_none  |                                  p_read19                                  |    scalar    |
+|p_read20     |  in |   16|   ap_none  |                                  p_read20                                  |    scalar    |
+|p_read21     |  in |   16|   ap_none  |                                  p_read21                                  |    scalar    |
+|p_read22     |  in |   16|   ap_none  |                                  p_read22                                  |    scalar    |
+|p_read23     |  in |   16|   ap_none  |                                  p_read23                                  |    scalar    |
+|p_read24     |  in |   16|   ap_none  |                                  p_read24                                  |    scalar    |
++-------------+-----+-----+------------+----------------------------------------------------------------------------+--------------+
+
